@@ -1,0 +1,142 @@
+import React, { useContext } from 'react';
+import { useState } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import AuthContext from '../context/AuthContext/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { format } from 'date-fns';
+import { useMutation } from '@tanstack/react-query';
+
+const AddFood = () => {
+
+    const { user } = useContext(AuthContext);
+
+    const { isPending, mutateAsync, isError } = useMutation({
+        mutationFn: async allJobsAvailable => {
+            await axios.post("http://localhost:4000/availablefoods", allJobsAvailable)
+        },
+        onSuccess: () => {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Added a new food, saved to database',
+                icon: 'success',
+                confirmButtonText: 'Close'
+            })
+        }
+    })
+
+    {/*  Donator Image, Name, Email (from Logged In User)  */ }
+    {/* Food status write to db by manual */ }
+
+    const [selectedDate, setSelectedDate] = useState(null);
+
+
+
+    const handleAddFood = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const initialData = Object.fromEntries(formData.entries());
+
+        const formattedDate = format(new Date(selectedDate), "yyyy-MM-dd");
+
+        initialData.expiredDate = formattedDate;
+        initialData.donatorImage = user?.photoURL;
+        initialData.foodDonatorName = user?.displayName;
+        initialData.foodDonatorEmail = user?.email;
+        initialData.foodStatus = "Available";
+
+        // send data to the server
+        await mutateAsync(initialData)
+        // Swal.fire({
+        //     title: 'Success!',
+        //     text: 'Added a new food',
+        //     icon: 'success',
+        //     confirmButtonText: 'Close'
+        // })
+
+
+        // axios.post('http://localhost:4000/availablefoods', initialData)
+        //     .then(res => {
+        //         console.log(res.data);
+        //         if (res.data.insertedId) {
+        //             Swal.fire({
+        //                 title: 'Success!',
+        //                 text: 'Added a movie',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Close'
+        //             })
+        //         }
+        //     })
+
+    }
+
+    return (
+        <>
+            <h2>Add Food</h2>
+            <form onSubmit={handleAddFood} className="card-body">
+
+                {/* Food Name  */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Food Name</span>
+                    </label>
+                    <input type="text" name='foodName' placeholder="Food Name" className="input input-bordered" required />
+                </div>
+
+                {/* Food Image  */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Food Image</span>
+                    </label>
+                    <input type="url" name='foodImage' placeholder="Food Image" className="input input-bordered" required />
+                </div>
+
+                {/* Food Quantity  */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Food Quantity</span>
+                    </label>
+                    <input type="number" name='foodQuantity' placeholder="Food Quantity" className="input input-bordered" required />
+                </div>
+
+                {/* Pickup Location */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Pickup Location</span>
+                    </label>
+                    <input type="text" name='pickupLocation' placeholder="Pickup Location" className="input input-bordered" required />
+                </div>
+
+                {/* Expired Date */}
+
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Expired Date</span>
+                    </label>
+                    <DatePicker
+                        selected={selectedDate}
+                        onChange={(date) => setSelectedDate(date)}
+                        dateFormat="yyyy-MM-dd" // Custom format
+                        placeholderText="Expired Date" // Placeholder text
+                    />
+                </div>
+
+                {/* Additional Notes */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Additional Notes</span>
+                    </label>
+                    <input type="text" name='additionalNotes' placeholder="Additional Notes" className="input input-bordered" required />
+                </div>
+
+                {/*  Donator Image, Name, Email (from Logged In User)  */}
+                {/* Food status write to db by manual */}
+                <input type="submit" className='btn' value={isPending ? "Adding" : "Add"} />
+            </form>
+        </>
+    );
+};
+
+export default AddFood;
