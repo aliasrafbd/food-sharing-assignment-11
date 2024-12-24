@@ -1,8 +1,51 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+# Welcome to my Project 09 (Client Side) (Assignment_Category_07) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
+
+
+1. **Name of the Project** <br>
+   Food Sharing BD
+
+
+2. **Purpose** <br>
+   In current world, Food Management is very important. Even though, we are in modern world, A millions of people are (especially in Africa continent) dyeing every year for lack of food. In Arabian countries or other rich countries people are wasting food every day for abundance of food. In Bangladesh, our platform can help poor and also rich people by sharing their food. A people can donate food through our website and request food for their needy people or people. 
+
+   Our purposes in brief- 
+   - Build a platform where people can easily share food.
+   - Donate food who have food abundance 
+   - Needy people can make food request
+   - Food management make easy.
+   - Mitigate sufferings sharing food.
+
+3. **Live URL** <br>
+   [https://eco-adventure-experience-p-09-002.netlify.app/](https://eco-adventure-experience-p-09-002.netlify.app/)
+
+
+4. **Key Features of my Project:**
+   - User can Register/Login.
+   - If they are logged in, they can Add food, Manage their food and make food request.
+   - User can login with their personal email or Google Email.
+   - Registered user can view all available foods in our platform.
+   - Get info about featured food (a food which has highest quantity).
+
+
+5. **NPM packages I have used in my project:**
+   - Tenstack Query
+   - Framer Motion
+   - Axios
+   - Cookie-Parser
+   - JSON WEBTOKEN
+   - React DatePicker
+   - Sweet Alert2
+   - Lottie React
+   - Tailwind.css.
+   - DaisyUI.
+   - React Router DOM.
+   - React Icon.
+   - Swiper.
+   - Firebase.
+
+# Thanks for reviewing my project.
