@@ -2,11 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import AuthContext from '../context/AuthContext/AuthContext';
 import { motion } from 'motion/react';
-import logo from "../../public/share-food-logo.png";
+import logo from "../../src/assets/share-food-logo.png"
 import { easeOut } from 'motion';
 import { FaUser } from "react-icons/fa";
-
-
 
 const Navbar = () => {
 
