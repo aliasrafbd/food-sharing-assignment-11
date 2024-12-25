@@ -41,7 +41,6 @@ const AvailableFoods = () => {
 
     }, [search])
 
-
     const { data, isLoading } = useQuery({
         queryKey: ['allAvailJobs'],
         queryFn: async () => {
@@ -61,9 +60,9 @@ const AvailableFoods = () => {
 
     return (
         <>
-            <div className='mx-auto'>
-                <div className='flex justify-end'>
-                    <div className='w-[370px] md:w-[400px] mt-6 mr-6 mx-auto mb-4'>
+            <div className='mx-auto max-w-7xl'>
+                <div className='flex items-center justify-end'>
+                    <div className='w-[400px] text-right mt-6 mb-4'>
                         <input
                             onChange={(e) => setSearch(e.target.value)}
                             type="text"
@@ -75,7 +74,7 @@ const AvailableFoods = () => {
                     </div>
                 </div>
 
-                <div className={`grid gap-4 mx-auto max-w-7xl ${isThreeColumn ? "grid-cols-3" : "grid-cols-2"
+                <div className={`grid gap-8 mx-auto max-w-7xl ${isThreeColumn ? "grid-cols-3" : "grid-cols-2"
                     }`}>
                     {
                         search ? (searchFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : (availableFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>))

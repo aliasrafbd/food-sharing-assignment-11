@@ -30,7 +30,7 @@ const FoodDetails = () => {
 
     }, [])
 
-    const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, name, userEmail, foodStatus } = food;
+    const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = food;
 
     const [text, setText] = useState(additionalNotes || "");
 
@@ -44,6 +44,7 @@ const FoodDetails = () => {
 
     const closeModal = () => {
 
+        //send data and get data for deleting from available foods
         fetch(`http://localhost:4000/availablefoods/${_id}`, {
             method: "DELETE"
         })
@@ -55,11 +56,10 @@ const FoodDetails = () => {
                     const remaining = availableFoods.filter(food => food._id != _id);
                     setAvailableFoods(remaining);
                     navigate("/availablefoods")
-
                 }
             })
 
-        console.log(reqFoodData);
+        console.log("req food data,", reqFoodData);
 
         // send data to the server
         fetch('http://localhost:4000/requestedfoods', {
@@ -84,14 +84,38 @@ const FoodDetails = () => {
 
     };
 
+    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = food;
+
     return (
         <>
-            <div>
-                Food Details: {foodName}, {_id}, {foodImage}
+            <div className='grid grid-cols-1 justify-center items-center md:grid-cols-2 gap-8 max-w-7xl mx-auto'>
+                <div>
+                    <img className='w-full h-[400px]' src={foodImage} alt="" />
+                </div>
+
+                <div className="md:col-span-1">
+                    <h2 className="text-2xl font-bold mb-2">{foodName}</h2>
+                    <p className="text-gray-600 mb-4">Food Id: {_id}</p>
+
+                    <div className="mb-4">
+                        <span className="text-2xl font-semibold text-gray-800">Food Quantity: {foodQuantity}</span>
+                    </div>
+
+                    <h3 className="text-xl font-semibold mt-8 mb-4">Food Details</h3>
+                    <ul className="list-disc ml-4">
+                        <li>Food Quantity: {foodQuantity}</li>
+                        <li>Expired Date: {expiredDate}</li>
+                        <li>Donator Name: {foodDonatorName}</li>
+                        <li>Food Donator Email: {foodDonatorEmail}</li>
+                        <li>Food Status: {foodStatus}</li>
+                    </ul>
+                    <button className="btn my-4" onClick={openModal}>
+                        Request
+                    </button>
+                </div>
+
             </div>
-            <button className="btn" onClick={openModal}>
-                Request
-            </button>
+
             <FoodDetailsModal
                 foodDetails={food}
                 userEmail={loggedInUserEmail}

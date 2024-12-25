@@ -73,8 +73,8 @@ const AddFood = () => {
 
     return (
         <>
-            <h2>Add Food</h2>
-            <form onSubmit={handleAddFood} className="card-body">
+            <h2 className='font-extrabold text-3xl text-center max-w-7xl mx-auto'>Add Food</h2>
+            <form onSubmit={handleAddFood} className="card-body grid grid-cols-2 gap-6 max-w-7xl mx-auto">
 
                 {/* Food Name  */}
                 <div className="form-control">
@@ -109,13 +109,12 @@ const AddFood = () => {
                 </div>
 
                 {/* Expired Date */}
-
-
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Expired Date</span>
                     </label>
                     <DatePicker
+                        className='w-full h-12 pl-1'
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
                         dateFormat="yyyy-MM-dd" // Custom format
@@ -133,7 +132,7 @@ const AddFood = () => {
 
                 {/*  Donator Image, Name, Email (from Logged In User)  */}
                 {/* Food status write to db by manual */}
-                <input type="submit" className='btn' value={isPending ? "Adding" : "Add"} />
+                <input type="submit" className='btn col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding" : "Add"} />
             </form>
         </>
     );

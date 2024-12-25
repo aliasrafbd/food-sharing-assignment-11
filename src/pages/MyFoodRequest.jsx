@@ -27,7 +27,7 @@ const MyFoodRequest = () => {
 
     return (
         <div className="">
-            <table className="table">
+            <table className="table text-center">
                 {/* head */}
                 <thead>
                     <tr>
@@ -51,7 +51,7 @@ const MyFoodRequest = () => {
                         requestedFoods?.map((food, idx) => <>
                             <tr className="hover"></tr>
                             <th>{idx + 1}</th>
-                            <td><img src={food.foodImage} alt="not valid" /></td>
+                            <td className='flex justify-center items-center'><img className='h-16 w-16 rounded-full' src={food.foodImage} alt="not valid" /></td>
                             {/* <td>{food._id}</td> */}
                             <td>{food.foodName}</td>
                             <td>{food.foodDonatorName}</td>
