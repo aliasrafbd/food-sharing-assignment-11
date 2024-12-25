@@ -59,26 +59,8 @@ const FoodDetails = () => {
                 }
             })
 
-        console.log("req food data,", reqFoodData);
+        // console.log("req food data,", reqFoodData);
 
-        // send data to the server
-        fetch('http://localhost:4000/requestedfoods', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(reqFoodData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "A food item is removed from available foods and send to requested Foods",
-                        icon: "success"
-                    });
-                }
-            })
 
         setIsModalOpen(false);
 

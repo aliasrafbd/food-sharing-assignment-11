@@ -5,6 +5,9 @@ import AuthContext from '../context/AuthContext/AuthContext';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from '../components/Loading';
+import { BsGrid } from "react-icons/bs";
+import { TfiLayoutGrid3 } from "react-icons/tfi";
+
 
 const AvailableFoods = () => {
 
@@ -83,9 +86,12 @@ const AvailableFoods = () => {
                 <div className='mx-auto max-w-7xl '>
                     <button
                         onClick={toggleGrid}
-                        className="absolute top-20 right-6 mb-4 px-4 py-2 bg-blue-700 text-white"
+                        className={`absolute top-[100px] right-24 text-3xl mb-4 px-4 py-2`}
                     >
-                        Toggle
+                        {
+                            isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>
+                            : <BsGrid></BsGrid>
+                        }
                     </button>
                 </div>
             </div>
