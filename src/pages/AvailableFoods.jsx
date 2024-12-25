@@ -70,7 +70,7 @@ const AvailableFoods = () => {
                             onChange={(e) => setSearch(e.target.value)}
                             type="text"
                             name='search'
-                            placeholder='search'
+                            placeholder='search foods by food name'
                             className='input input-bordered w-full'
                             required
                         />
@@ -86,7 +86,7 @@ const AvailableFoods = () => {
                 <div className='mx-auto max-w-7xl '>
                     <button
                         onClick={toggleGrid}
-                        className={`absolute top-[100px] right-24 text-3xl mb-4 px-4 py-2`}
+                        className={`absolute top-[100px] right-28 text-3xl mb-4 px-4 py-2`}
                     >
                         {
                             isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>

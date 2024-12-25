@@ -79,12 +79,12 @@ const Register = () => {
     }
 
     return (
-        <div>
-            <div className="bg-updateProfile object-contain w-screen bg-no-repeat bg-cover bg-center min-h-screen flex justify-center -mt-8 items-center">
-                <div className="opacity-1 w-full card bg-transparent px-0 md:px-6 py-12 max-w-5xl shrink-0">
-                    <h2 className="font-semibold text-center text-2xl">Register</h2>
+        <div className='max-w-7xl mx-auto'>
+            <div className="bg-updateProfile object-contain bg-no-repeat bg-cover bg-center min-h-screen flex justify-center -mt-8 items-center">
+                <div className="opacity-1 w-full card bg-transparent px-0 md:px-6 py-12">
+                    <h2 className="font-semibold text-center mb-6 text-2xl">Register Account</h2>
                     <div className='flex gap-6 justify-center items-center'>
-                        <form onSubmit={handleSignUp} className="card-body flex-1">
+                        <form onSubmit={handleSignUp} className="card-body max-w-md">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -125,12 +125,11 @@ const Register = () => {
                             </div>
                             <p>Already have an account? Please <Link className='text-blue-600' to="/login">Login</Link> </p>
                         </form>
-                        <div className='flex-1'>
+                        <div className='w-1/3'>
                             <Lottie animationData={LottieDataRegister}></Lottie>
                         </div>
                     </div>
                     <button onClick={handleLoginGoogle} className="btn bg-gray-200 hover:bg-yellow-300 w-3/6 mx-auto">Continue with Google</button>
-
                 </div>
             </div>
         </div>

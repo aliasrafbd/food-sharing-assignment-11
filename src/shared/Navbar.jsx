@@ -108,7 +108,7 @@ const Navbar = () => {
                         </div>
                         <div>
                             {
-                                user ? <Link to="/"><button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transition duration-300" onClick={logOut}>Log Out</button></Link> : <Link to="/login"><button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transition duration-300">Login</button></Link>
+                                user ? <Link to="/"><button className="" onClick={logOut}>Log Out</button></Link> : <Link to="/login"><button className="">Login</button></Link>
                             }
                         </div>
                     </div>

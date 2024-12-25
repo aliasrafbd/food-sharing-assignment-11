@@ -51,8 +51,6 @@ const Login = () => {
 
                 const user = { email: email }
 
-
-
             })
             .catch((err) => {
                 setError({ ...error, login: err.code });
@@ -90,11 +88,10 @@ const Login = () => {
 
 
     return (
-        <div>
-                    <h2 className="font-semibold text-center text-2xl">Login your account</h2>
-            <div className="bg-updateProfile w-screen bg-no-repeat bg-cover bg-center -mt-8 mb-16 min-h-[700px] flex justify-center items-center">
+        <div className='max-w-7xl mx-auto'>
+            <h2 className="font-semibold text-center text-2xl">Login your account</h2>
+            <div className="bg-updateProfile bg-no-repeat bg-cover bg-center -mt-8 mb-16 min-h-[700px] flex justify-center items-center">
                 <div className=" flex-1 opacity-1 md:w-[85%] w-full card bg-transparent px-0 md:px-6 py-12 max-w-lg shrink-0">
-
                     <div className=''>
                         <form onSubmit={handleSubmit} className="card-body">
 
@@ -131,7 +128,7 @@ const Login = () => {
 
                 </div>
                 <div
-                 className='w-1/3'>
+                    className='w-1/3'>
                     <Lottie animationData={LottieDataLogin}></Lottie>
                 </div>
             </div>

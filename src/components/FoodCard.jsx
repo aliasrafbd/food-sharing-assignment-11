@@ -19,7 +19,7 @@ const FoodCard = ({ food }) => {
                 <p>• Food Donator Email: {foodDonatorEmail}</p>
                 <p>• Food Status: {foodStatus}</p>
             </div> */}
-            <Link className='text-md mb-4 flex justify-end font-semibold text-red-600 mt-4' to={`/food/${_id}`}>View Details...</Link>
+            <Link className='text-md mb-4 flex transition duration-300 justify-end font-semibold text-red-700 hover:text-blue-700 mt-4' to={`/food/${_id}`}>MORE DETAILS</Link>
         </div>
     );
 };

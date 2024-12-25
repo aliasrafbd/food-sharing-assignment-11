@@ -52,13 +52,13 @@ const UpdateFood = () => {
 
     return (
         <>
-
-            <form onSubmit={handleUpdateFood} className="card-body">
+            <h2 className='font-bold text-3xl mx-auto max-w-[120px] r block text-center mb-2 p-2'>Update</h2>
+            <form onSubmit={handleUpdateFood} className="card-body max-w-7xl mx-auto grid gap-4 grid-cols-2">
 
                 {/* Food Name  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Name</span>
+                        <span className="label-text font-bold">Food Name</span>
                     </label>
                     <input type="text" defaultValue={foodName} name='foodName' placeholder="Food Name" className="input input-bordered" required />
                 </div>
@@ -66,7 +66,7 @@ const UpdateFood = () => {
                 {/* Food Image  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Image</span>
+                        <span className="label-text font-bold">Food Image</span>
                     </label>
                     <input type="url" defaultValue={foodImage} name='foodImage' placeholder="Food Image" className="input input-bordered" required />
                 </div>
@@ -74,7 +74,7 @@ const UpdateFood = () => {
                 {/* Food Donator Email  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Donator Email</span>
+                        <span className="label-text font-bold">Food Donator Email</span>
                     </label>
                     <input type="text" defaultValue={loadedData.foodDonatorEmail} name='foodDonatorEmail' placeholder="Food Donator Email" className="input input-bordered" required />
                 </div>
@@ -82,7 +82,7 @@ const UpdateFood = () => {
                 {/* Food Donator Name  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Donator Name</span>
+                        <span className="label-text font-bold">Food Donator Name</span>
                     </label>
                     <input type="text" defaultValue={foodDonatorName} name='foodDonatorName' placeholder="Food Donator Name" className="input input-bordered" required />
                 </div>
@@ -90,7 +90,7 @@ const UpdateFood = () => {
                 {/* Pickup Location */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Pickup Location</span>
+                        <span className="label-text font-bold">Pickup Location</span>
                     </label>
                     <input type="text" defaultValue={pickupLocation} name='pickupLocation' placeholder="Pickup Location" className="input input-bordered" required />
                 </div>
@@ -98,7 +98,7 @@ const UpdateFood = () => {
                 {/* Expired Date */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Expired Date</span>
+                        <span className="label-text font-bold">Expired Date</span>
                     </label>
                     <input type="date" defaultValue={expiredDate} name='expiredDate' placeholder="Expired Date" className="input input-bordered" required />
                 </div>
@@ -106,14 +106,14 @@ const UpdateFood = () => {
                 {/* Additional Notes */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Additional Notes</span>
+                        <span className="label-text font-bold">Additional Notes</span>
                     </label>
                     <input type="text"
 
                         name='additionalNotes' defaultValue={additionalNotes} placeholder="Additional Notes" className="input input-bordered" required />
                 </div>
 
-                <input type="submit" className='btn' value="Update" />
+                <input type="submit" className='btn text-2xl hover:text-white col-span-2 btn-error' value="Update" />
             </form>
         </>
     );
