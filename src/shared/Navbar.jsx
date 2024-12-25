@@ -67,30 +67,30 @@ const Navbar = () => {
                             src={logo}
 
                             animate={
-                                { x: [-50, 50, 10] }
+                                { x: [0, 50, 0] }
                             }
                             transition={
-                                { duration: 8, delay:1, repeat: Infinity }
+                                { duration: 8, repeat: Infinity }
                             }
 
                             className="max-w-lg w-24 h-24 mb-4 rounded-t-[45px]" />
                         <motion.h2
                             animate={
-                                { x: [-50, 50, 10] }
+                                { x: [0, 50, 0] }
                             }
                             transition={
-                                { duration: 8, delay: 1, ease: easeOut, repeat: Infinity }
+                                { duration: 8, ease: easeOut, repeat: Infinity }
                             }
 
-                            className="mb-12 text-xl font-bold">Men for <motion.span
+                            className="mb-12 text-xl font-bold">Food for <motion.span
                                 animate={
-                                    { color: ['#33df33', '#33ffgg', '#ff6133'], }
+                                    { color: ['#33df33', '#33ff66', '#ff6133'], }
                                 }
                                 transition={
-                                    { duration: 1.5, delay: 1, repeat: Infinity }
+                                    { duration: 1.5, repeat: Infinity }
                                 }
 
-                            >Men</motion.span> </motion.h2>
+                            >All</motion.span> </motion.h2>
                     </div>
 
                 </div>

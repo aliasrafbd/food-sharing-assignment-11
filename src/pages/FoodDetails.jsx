@@ -16,12 +16,6 @@ const FoodDetails = () => {
     const [food, setFood] = useState({});
 
     useEffect(() => {
-        // fetch(`http://localhost:4000/availablefoods/:id`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         setFood(data);
-        //     })
 
         axios.get(`http://localhost:4000/availablefoods/${id}`)
             .then(res => {
@@ -80,10 +74,10 @@ const FoodDetails = () => {
                     <p className="text-gray-600 mb-4">Food Id: {_id}</p>
 
                     <div className="mb-4">
-                        <span className="text-2xl font-semibold text-gray-800">Food Quantity: {foodQuantity}</span>
+                        <span className="text-xl font-semibold text-gray-800">Food Quantity: {foodQuantity}</span>
                     </div>
 
-                    <h3 className="text-xl font-semibold mt-8 mb-4">Food Details</h3>
+                    <h3 className="text-lg font-semibold mt-8 mb-4">Food Details:</h3>
                     <ul className="list-disc ml-4">
                         <li>Food Quantity: {foodQuantity}</li>
                         <li>Expired Date: {expiredDate}</li>
@@ -91,7 +85,7 @@ const FoodDetails = () => {
                         <li>Food Donator Email: {foodDonatorEmail}</li>
                         <li>Food Status: {foodStatus}</li>
                     </ul>
-                    <button className="btn my-4" onClick={openModal}>
+                    <button className="btn my-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg hover:from-green-500 hover:to-blue-500 transition duration-300" onClick={openModal}>
                         Request
                     </button>
                 </div>

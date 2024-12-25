@@ -130,7 +130,7 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
                                     defaultValue={foodDetails.additionalNotes}
                                     name='additionalNotes' placeholder="Additional Notes" className="input input-bordered" required />
                             </div>
-                            <input type="submit" className='btn' value="Req" />
+                            <input type="submit" className='btn bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 transition duration-300' value="Request" />
                         </form>
                     </div>
                 </div>
