@@ -7,7 +7,8 @@ import axios from 'axios';
 import Loading from '../components/Loading';
 import { BsGrid } from "react-icons/bs";
 import { TfiLayoutGrid3 } from "react-icons/tfi";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AvailableFoods = () => {
 
@@ -44,10 +45,17 @@ const AvailableFoods = () => {
 
     }, [search])
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true,     // Whether animation should happen only once
+        });
+    }, []);
+
     const { data, isLoading } = useQuery({
         queryKey: ['allAvailJobs'],
         queryFn: async () => {
-            const { data } = await axios.get("http://localhost:4000/foods/availablefoods", {withCredentials:true})
+            const { data } = await axios.get("http://localhost:4000/foods/availablefoods", { withCredentials: true })
             return data;
         }
     })
@@ -90,7 +98,7 @@ const AvailableFoods = () => {
                     >
                         {
                             isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>
-                            : <BsGrid></BsGrid>
+                                : <BsGrid></BsGrid>
                         }
                     </button>
                 </div>
