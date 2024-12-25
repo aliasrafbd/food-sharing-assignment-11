@@ -55,15 +55,16 @@ const Login = () => {
             .catch((err) => {
                 setError({ ...error, login: err.code });
                 Swal.fire({
-                    title: 'Logging error...',
-                    text: 'Navigating to Home Page.',
+                    title: 'Logging error',
+                    text: 'Please put correct Email and Password.',
                     icon: 'info',
                     timer: 1000, // Auto close after 3 seconds
                     showConfirmButton: false, // Hide the confirm button
                     timerProgressBar: true, // Show a progress bar
                 });
                 setLoading(false)
-                navigate("/");
+                e.target.reset();
+                
             });
     }
 
@@ -73,7 +74,7 @@ const Login = () => {
             .then(res => {
                 // navigate(location?.state ? location.state : "/");
                 Swal.fire({
-                    title: 'Logging in...',
+                    title: 'Logging in',
                     text: 'Please wait while we process your request.',
                     icon: 'info',
                     timer: 1000, // Auto close after 3 seconds
@@ -82,15 +83,15 @@ const Login = () => {
                 });
                 setLoading(false)
                 // navigate(location?.state ? location.state : "/");
-                navigate("/");
+                // navigate("/");
             })
     }
 
 
     return (
         <div className='max-w-7xl mx-auto'>
-            <h2 className="font-semibold text-center text-2xl">Login your account</h2>
-            <div className="bg-updateProfile bg-no-repeat bg-cover bg-center -mt-8 mb-16 min-h-[700px] flex justify-center items-center">
+            <h2 className="font-semibold text-center text-2xl">Login account</h2>
+            <div className="bg-updateProfile bg-no-repeat bg-cover bg-center mb-4 flex justify-center items-center">
                 <div className=" flex-1 opacity-1 md:w-[85%] w-full card bg-transparent px-0 md:px-6 py-12 max-w-lg shrink-0">
                     <div className=''>
                         <form onSubmit={handleSubmit} className="card-body">

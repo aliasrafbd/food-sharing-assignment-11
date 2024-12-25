@@ -16,6 +16,8 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.target).entries());
 
+        formData.foodStatus = "requested";
+        
         console.log("form dataaa", formData);
 
         // reqFoodData.donatorImage = user?.photoURL;
@@ -72,20 +74,12 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
                                 <input type="url" readOnly defaultValue={foodDetails.foodImage} name='foodImage' placeholder="Food Image" className="input input-bordered" required />
                             </div>
 
-                            {/* Food ID 
+                            {/* Food ID  */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Food ID</span>
                                 </label>
                                 <input type="text" readOnly defaultValue={foodDetails._id} name='foodId' placeholder="Food ID" className="input input-bordered" required />
-                            </div> */}
-
-                            {/* Food Donator Name  */}
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Food Donator Name</span>
-                                </label>
-                                <input type="text" readOnly defaultValue={foodDetails.foodDonatorName} name='foodDonatorName' placeholder="Food Donator Name" className="input input-bordered" required />
                             </div>
 
                             {/* User Email  */}
@@ -93,7 +87,23 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
                                 <label className="label">
                                     <span className="label-text">User Email</span>
                                 </label>
-                                <input type="text" readOnly defaultValue={userEmail} name='userEmail' className="input input-bordered" required />
+                                <input type="text" readOnly defaultValue={user?.email} name='userEmail' className="input input-bordered" required />
+                            </div>
+
+                              {/* Food Donator Name  */}
+                              <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Food Donator Name</span>
+                                </label>
+                                <input type="text" readOnly defaultValue={foodDetails.foodDonatorName} name='foodDonatorName' placeholder="Food Donator Name" className="input input-bordered" required />
+                            </div>
+
+                             {/* Food Donator Email  */}
+                             <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Food Donator Email</span>
+                                </label>
+                                <input type="text" readOnly defaultValue={userEmail} name='foodDonatorEmail' className="input input-bordered" required />
                             </div>
 
                             {/* Reqeusted Date  */}

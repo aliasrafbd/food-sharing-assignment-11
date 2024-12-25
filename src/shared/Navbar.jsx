@@ -27,6 +27,7 @@ const Navbar = () => {
         <NavLink to="/addfood"><button><li className='py-1 px-3 font-semibold'>Add Food</li></button></NavLink>
         <NavLink to="/managemyfoods"><button><li className='py-1 px-3 font-semibold'>Manage My Foods</li></button></NavLink>
         <NavLink to="/myfoodrequest"><button><li className='py-1 px-3 font-semibold'>My Food Request</li></button></NavLink>
+        <NavLink to="/addblog"><button><li className='py-1 px-3 font-semibold'>Add Blog</li></button></NavLink>
 
         {
             !user && (<NavLink to="/login"><button><li className='py-1 px-3 font-semibold'>Login</li></button></NavLink>)

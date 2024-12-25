@@ -35,8 +35,9 @@
    - Tenstack Query
    - Framer Motion
    - Axios
+   - AOS
    - Cookie-Parser
-   - JSON WEBTOKEN
+   - JSON WEB TOKEN
    - React DatePicker
    - Sweet Alert2
    - Lottie React

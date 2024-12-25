@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         Swal.fire({
-            title: 'Logged Out...',
+            title: 'Logged Out, Please Login',
             icon: 'info',
             timer: 1000,
             showConfirmButton: false,

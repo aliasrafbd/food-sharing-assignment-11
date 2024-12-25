@@ -10,12 +10,14 @@ import FoodCard from "./FoodCard";
 import { useContext, useEffect } from "react";
 import AOS from "aos";
 import AuthContext from "../context/AuthContext/AuthContext";
+import BlogsCard from "./BlogsCard";
 
-const FeaturedFoods = ({ featuredFoods }) => {
+const OurBlogs = ({ ourAllBlogs }) => {
 
     const {user} = useContext(AuthContext);
 
-    console.log(featuredFoods);
+    // console.log(featuredFoods);
+    console.log(ourAllBlogs); 
 
     useEffect(() => {
             AOS.init({
@@ -24,14 +26,11 @@ const FeaturedFoods = ({ featuredFoods }) => {
             });
         }, []);
 
-    // const loadedAllMovies = useLoaderData();
-    // const { allMovies, setAllMovies } = useContext(AuthContext);
-    // const [searchMovies, setSearchMovies] = useState("");
 
     return (
         <>
             <div className="mx-auto max-w-7xl">
-                <div className="text-center">
+                <div className="text-center my-16">
                     <motion.h2
                         animate={
                             { x: 50, }
@@ -40,7 +39,7 @@ const FeaturedFoods = ({ featuredFoods }) => {
                             { duration: 2, delay: 1, ease: easeOut, repeat: Infinity }
                         }
 
-                        className="mb-12 text-3xl font-bold">Featured <motion.span
+                        className="mb-12 text-3xl font-bold">Our <motion.span
                             animate={
                                 { color: ['#33df33', '#33ff66', '#ff6133'], }
                             }
@@ -48,15 +47,12 @@ const FeaturedFoods = ({ featuredFoods }) => {
                                 { duration: 1.5, delay: 1, repeat: Infinity }
                             }
 
-                        >Foods</motion.span> </motion.h2>
+                        >Recent Blogs</motion.span> </motion.h2>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 mx-auto max-w-7xl'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12 mx-auto max-w-7xl'>
                     {
-                        featuredFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)
+                        ourAllBlogs?.map((blog, idx) => <BlogsCard key={idx} blog={blog}></BlogsCard>)
                     }
-                </div>
-                <div>
-                    <Link className='btn my-2 mx-auto flex justify-center max-w-[200px] items-center btn-warning' to={user ? "/availablefoods" : "/login" }>Show All</Link>
                 </div>
             </div>
         </>
@@ -64,4 +60,4 @@ const FeaturedFoods = ({ featuredFoods }) => {
     );
 };
 
-export default FeaturedFoods;
+export default OurBlogs;

@@ -13,6 +13,7 @@ import "aos/dist/aos.css";
 const AvailableFoods = () => {
 
     const { availableFoods, setAvailableFoods } = useContext(AuthContext);
+    const [ sortedBYFoods, setSortedByFoods ] = useState();
 
     const loadedData = useLoaderData();
 
@@ -35,7 +36,15 @@ const AvailableFoods = () => {
     };
 
     const availFoods = useLoaderData();
+
+    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = availFoods;
+
+
     setAvailableFoods(availFoods);
+
+    console.log(availFoods);
+
+
 
     useEffect(() => {
         axios.get(`http://localhost:4000/foods/availablefoods?searchParams=${search}`)
@@ -64,7 +73,20 @@ const AvailableFoods = () => {
         return <Loading></Loading>
     }
 
+
     setAvailableFoods(data);
+
+    
+    const sortByDate = () => {
+
+        const sortedFoods = [...availableFoods].sort((a, b) => {
+          const dateA = new Date(a.expiredDate);
+          const dateB = new Date(b.expiredDate);
+          return dateA - dateB; // Sort ascending
+        });
+        setSortedByFoods(sortedFoods);
+      };
+
     console.log(data);
     console.log(isLoading);
 
@@ -85,10 +107,14 @@ const AvailableFoods = () => {
                     </div>
                 </div>
 
+                <div className='flex justify-end'>
+                    <button onClick={sortByDate} className='btn btn-success my-4'>Sort by Date</button>
+                </div>
+
                 <div className={`grid gap-8 mx-auto max-w-7xl ${isThreeColumn ? "grid-cols-3" : "grid-cols-2"
                     }`}>
                     {
-                        search ? (searchFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : (availableFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>))
+                        search ? (searchFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : sortedBYFoods ? (sortedBYFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : (availableFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>))
                     }
                 </div>
                 <div className='mx-auto max-w-7xl '>

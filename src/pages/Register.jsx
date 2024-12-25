@@ -11,6 +11,8 @@ const Register = () => {
 
     const navigate = useNavigate();
 
+    const {logOut} = useContext(AuthContext);
+
     const { user, setUser, createANewUser, updateUserProfile, googleLogIn } = useContext(AuthContext)
 
     const handleSignUp = (e) => {
@@ -54,14 +56,16 @@ const Register = () => {
                     showConfirmButton: false, // Hide the confirm button
                     timerProgressBar: true, // Show a progress bar
                 });
+
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
-                        navigate("/");
+                        logOut();
+                        navigate("/login");
                     })
                     .catch((error) => {
                     })
-                // setLoading(false);
-                navigate("/");
+                
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -80,7 +84,7 @@ const Register = () => {
 
     return (
         <div className='max-w-7xl mx-auto'>
-            <div className="bg-updateProfile object-contain bg-no-repeat bg-cover bg-center min-h-screen flex justify-center -mt-8 items-center">
+            <div className="bg-updateProfile object-contain bg-no-repeat bg-cover bg-center flex justify-center -mt-8 items-center">
                 <div className="opacity-1 w-full card bg-transparent px-0 md:px-6 py-12">
                     <h2 className="font-semibold text-center mb-6 text-2xl">Register Account</h2>
                     <div className='flex gap-6 justify-center items-center'>

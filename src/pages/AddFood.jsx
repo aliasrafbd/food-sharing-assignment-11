@@ -32,7 +32,6 @@ const AddFood = () => {
     const [selectedDate, setSelectedDate] = useState(null);
 
 
-
     const handleAddFood = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -132,7 +131,7 @@ const AddFood = () => {
 
                 {/*  Donator Image, Name, Email (from Logged In User)  */}
                 {/* Food status write to db by manual */}
-                <input type="submit" className='btn col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding" : "Add"} />
+                <input type="submit" className='btn col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding Food" : "Add Food"} />
             </form>
         </>
     );
