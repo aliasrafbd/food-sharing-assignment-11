@@ -14,10 +14,6 @@ const Navbar = () => {
 
     console.log(user);
 
-    const toggleTheme = () => {
-        setIsDarkTheme((prevTheme) => !prevTheme);
-    };
-
     const Links = (<>
 
 

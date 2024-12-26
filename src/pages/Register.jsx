@@ -52,9 +52,9 @@ const Register = () => {
                     title: 'New User Registered...',
                     text: 'Please wait, we are navigating to home page',
                     icon: 'info',
-                    timer: 1000, // Auto close after 3 seconds
-                    showConfirmButton: false, // Hide the confirm button
-                    timerProgressBar: true, // Show a progress bar
+                    timer: 1000, 
+                    showConfirmButton: false, 
+                    timerProgressBar: true, 
                 });
 
                 updateUserProfile({ displayName: name, photoURL: photo })
@@ -77,7 +77,7 @@ const Register = () => {
     const handleLoginGoogle = () => {
         googleLogIn()
             .then(res => {
-                // navigate(location?.state ? location.state : "/");
+                
                 navigate("/");
             })
     }
@@ -86,7 +86,7 @@ const Register = () => {
         <div className='max-w-7xl mx-auto'>
             <div className="bg-updateProfile object-contain bg-no-repeat bg-cover bg-center flex justify-center -mt-8 items-center">
                 <div className="opacity-1 w-full card bg-transparent px-0 md:px-6 py-12">
-                    <h2 className="font-semibold text-center mb-6 text-2xl">Register Account</h2>
+                    <h2 className="font-extrabold text-center mb-6 text-3xl">Register Account</h2>
                     <div className='flex gap-6 justify-center items-center'>
                         <form onSubmit={handleSignUp} className="card-body max-w-md">
                             <div className="form-control">

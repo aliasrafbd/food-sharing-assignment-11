@@ -27,7 +27,6 @@ const BlogDetails = () => {
 
     const { newsHeadline, newsAuthor, newsImage, newsContent, publishedDate } = blog
 
-    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = food;
 
     return (
         <>

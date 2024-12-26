@@ -21,17 +21,7 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
 
         formData.foodStatus = "requested";
         
-        console.log("form dataaa", formData);
 
-
-        // reqFoodData.donatorImage = user?.photoURL;
-        // reqFoodData.foodDonatorName = user?.displayName;
-        // reqFoodData.userEmail = user?.email;
-        // reqFoodData.foodStatus = "requested";
-
-        // setReqFoodData(formData);
-
-        // send data to the server
         fetch('http://localhost:4000/requestedfoods', {
             method: "POST",
             headers: {

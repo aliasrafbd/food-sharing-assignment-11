@@ -69,12 +69,11 @@ const ManageMyFoods = () => {
             </h2>
             <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center w-[95%] overflow-x-auto lg:overflow-x-hidden bg-red-200 py-4">
                 <table className="table text-center">
-                    {/* head */}
+                    
                     <thead className='font-extrabold hover:text-red-400'>
                         <tr>
                             <th></th>
                             <th>Food Image</th>
-                            {/* <th>ID</th> */}
                             <th>Food Name</th>
                             <th>Food Donator Name</th>
                             <th>Food Donator Email</th>
@@ -87,7 +86,7 @@ const ManageMyFoods = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 2 */}
+                        
 
                         {
 
@@ -95,7 +94,7 @@ const ManageMyFoods = () => {
                                 <tr className="hover"></tr>
                                 <th>{idx + 1}</th>
                                 <td className='flex justify-center items-center'><img className='h-16 w-16 rounded-full' src={food.foodImage} alt="not valid" /></td>
-                                {/* <td>{food._id}</td> */}
+                                
                                 <td>{food.foodName}</td>
                                 <td>{food.foodDonatorName}</td>
                                 <td>{food.foodDonatorEmail}</td>

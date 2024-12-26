@@ -53,14 +53,10 @@ const FoodDetails = () => {
                 }
             })
 
-        // console.log("req food data,", reqFoodData);
-
-
         setIsModalOpen(false);
 
     };
 
-    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = food;
 
     return (
         <>

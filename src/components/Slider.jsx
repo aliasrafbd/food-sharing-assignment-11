@@ -26,12 +26,12 @@ const Slider = () => {
                         }}
                         spaceBetween={30}
                         breakpoints={{
-                            // When the viewport is >= 640px
+                            
                             640: {
-                                slidesPerView: 1, // Show 2 slides
+                                slidesPerView: 1, 
                             },
                         }}
-                        slidesPerView={2} // Default for smaller screens
+                        slidesPerView={2} 
 
                         className="mySwiper"
 

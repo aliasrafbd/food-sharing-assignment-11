@@ -1,7 +1,3 @@
-// import React, { useContext, useState } from 'react';
-// import { Link, useLoaderData } from 'react-router-dom';
-// import { AuthContext } from '../providers/AuthProvider';
-// import MovieCard from './MovieCard';
 
 import { Link } from "react-router-dom";
 import { motion } from 'motion/react';
@@ -16,13 +12,12 @@ const OurBlogs = ({ ourAllBlogs }) => {
 
     const {user} = useContext(AuthContext);
 
-    // console.log(featuredFoods);
     console.log(ourAllBlogs); 
 
     useEffect(() => {
             AOS.init({
-                duration: 1000, // Animation duration in milliseconds
-                once: true,     // Whether animation should happen only once
+                duration: 1000, 
+                once: true,     
             });
         }, []);
 

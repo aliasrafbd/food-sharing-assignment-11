@@ -6,13 +6,13 @@ import Loading from '../components/Loading';
 const PrivateRoute = ({children}) => {
 
     const { user, loading } = useContext(AuthContext);
-    // const location = useLocation();
+    
 
     const pathname = useLocation();
 
     if(loading) {
         return <Loading></Loading>
-        // return <Navigate to = {"/login"}></Navigate>
+        
     }
 
     if(user && user?.email) {

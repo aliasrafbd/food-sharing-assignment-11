@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const UpdateFood = () => {
 
     const [selectedDate, setSelectedDate] = useState(null);
-    // const [food, setFood] = useState({});
+    
     const currentDate = new Date().toLocaleString();
 
     const loadedData = useLoaderData();

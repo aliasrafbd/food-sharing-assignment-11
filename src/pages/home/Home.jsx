@@ -13,10 +13,6 @@ const Home = () => {
 
     const {ourAllBlogs} = useLoaderData();
 
-    // console.log(featuredFoods);
-    // console.log(featuredFoods);
-    
-
     const awardsWon = 20;
     const servedPeopleInTotal = 130550;
     const servedFamily = Math.ceil(servedPeopleInTotal/4);

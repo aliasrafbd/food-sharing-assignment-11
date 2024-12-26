@@ -20,10 +20,6 @@ const Login = () => {
 
     const [localEmail, setLocalEmail] = useState("");
 
-    // const handleEmailChange = (e) => {
-    //     setLocalEmail(e.target.value);
-    //     // setAuthEmail(e.target.value);
-    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,12 +37,12 @@ const Login = () => {
                     title: 'Logging in...',
                     text: 'Please wait while we process your request.',
                     icon: 'info',
-                    timer: 1000, // Auto close after 3 seconds
-                    showConfirmButton: false, // Hide the confirm button
-                    timerProgressBar: true, // Show a progress bar
+                    timer: 1000, 
+                    showConfirmButton: false, 
+                    timerProgressBar: true, 
                 });
                 setLoading(false)
-                // navigate(location?.state ? location.state : "/");
+                
                 navigate("/");
 
                 const user = { email: email }
@@ -58,9 +54,9 @@ const Login = () => {
                     title: 'Logging error',
                     text: 'Please put correct Email and Password.',
                     icon: 'info',
-                    timer: 1000, // Auto close after 3 seconds
-                    showConfirmButton: false, // Hide the confirm button
-                    timerProgressBar: true, // Show a progress bar
+                    timer: 1000, 
+                    showConfirmButton: false, 
+                    timerProgressBar: true, 
                 });
                 setLoading(false)
                 e.target.reset();
@@ -72,17 +68,17 @@ const Login = () => {
 
         googleLogIn()
             .then(res => {
-                // navigate(location?.state ? location.state : "/");
+                
                 Swal.fire({
                     title: 'Logging in',
                     text: 'Please wait while we process your request.',
                     icon: 'info',
-                    timer: 1000, // Auto close after 3 seconds
-                    showConfirmButton: false, // Hide the confirm button
-                    timerProgressBar: true, // Show a progress bar
+                    timer: 1000, 
+                    showConfirmButton: false, 
+                    timerProgressBar: true, 
                 });
                 setLoading(false)
-                // navigate(location?.state ? location.state : "/");
+                
                 navigate("/");
             })
     }
@@ -90,7 +86,7 @@ const Login = () => {
 
     return (
         <div className='max-w-7xl mx-auto'>
-            <h2 className="font-semibold text-center text-2xl">Login account</h2>
+            <h2 className="font-extrabold text-center text-3xl">Login Account</h2>
             <div className="bg-updateProfile bg-no-repeat bg-cover bg-center mb-4 flex justify-center items-center">
                 <div className=" flex-1 opacity-1 md:w-[85%] w-full card bg-transparent px-0 md:px-6 py-12 max-w-lg shrink-0">
                     <div className=''>

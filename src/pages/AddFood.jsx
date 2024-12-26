@@ -27,8 +27,6 @@ const AddFood = () => {
         
     })
 
-    {/*  Donator Image, Name, Email (from Logged In User)  */ }
-    {/* Food status write to db by manual */ }
 
     const [selectedDate, setSelectedDate] = useState(null);
 
@@ -46,30 +44,9 @@ const AddFood = () => {
         initialData.foodStatus = "Available";
         e.target.reset();
 
-        
 
-        // send data to the server
         await mutateAsync(initialData)
-        // Swal.fire({
-        //     title: 'Success!',
-        //     text: 'Added a new food',
-        //     icon: 'success',
-        //     confirmButtonText: 'Close'
-        // })
-
-
-        // axios.post('http://localhost:4000/availablefoods', initialData)
-        //     .then(res => {
-        //         console.log(res.data);
-        //         if (res.data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Added a movie',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Close'
-        //             })
-        //         }
-        //     })
+        
 
     }
 

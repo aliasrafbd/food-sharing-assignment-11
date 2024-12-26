@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
             showConfirmButton: false,
             timerProgressBar: true,
         });
-        // setLoading(false)
+        setLoading(false)
 
         return signOut(auth)
     }

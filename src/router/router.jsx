@@ -10,7 +10,6 @@ import AvailableFoods from "../pages/AvailableFoods";
 import AddFood from "../pages/AddFood";
 import ManageMyFoods from "../pages/ManageMyFoods";
 import MyFoodRequest from "../pages/MyFoodRequest";
-// import PrivateRoute from "./PrivateRoute";
 import FoodDetails from "../pages/FoodDetails";
 import UpdateFood from "../pages/UpdateFood";
 import PrivateRoute from "./PrivateRoute";
@@ -46,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: '/availablefoods',
                 element: <AvailableFoods></AvailableFoods>,
-                // loader: () => fetch("http://localhost:4000/foods/availablefoods"),
+                
             },
             {
                 path: '/addfood',

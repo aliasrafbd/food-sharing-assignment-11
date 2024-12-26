@@ -19,14 +19,11 @@ const FeaturedFoods = ({ featuredFoods }) => {
 
     useEffect(() => {
             AOS.init({
-                duration: 1000, // Animation duration in milliseconds
-                once: true,     // Whether animation should happen only once
+                duration: 1000, 
+                once: true,     
             });
         }, []);
 
-    // const loadedAllMovies = useLoaderData();
-    // const { allMovies, setAllMovies } = useContext(AuthContext);
-    // const [searchMovies, setSearchMovies] = useState("");
 
     return (
         <>

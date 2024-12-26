@@ -37,7 +37,6 @@ const AvailableFoods = () => {
 
     const availFoods = useLoaderData();
 
-    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = availFoods;
 
 
     setAvailableFoods(availFoods);
@@ -56,8 +55,8 @@ const AvailableFoods = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Animation duration in milliseconds
-            once: true,     // Whether animation should happen only once
+            duration: 1000, 
+            once: true,     
         });
     }, []);
 
@@ -82,7 +81,7 @@ const AvailableFoods = () => {
         const sortedFoods = [...availableFoods].sort((a, b) => {
           const dateA = new Date(a.expiredDate);
           const dateB = new Date(b.expiredDate);
-          return dateA - dateB; // Sort ascending
+          return dateA - dateB; 
         });
         setSortedByFoods(sortedFoods);
       };
