@@ -13,7 +13,7 @@ const BlogsCard = ({ blog }) => {
         <div className='flex flex-col'>
             <img 
             data-aos="zoom-in"
-            className='w-full h-[400px]' src={newsImage} alt="" />
+            className='w-full h-[200px] md:h-[300px]' src={newsImage} alt="" />
             <div className='flex justify-between my-2'>
                 <span>{publishedDate}</span>
                 <span>Source: <span className='font-bold text-gray-400'>{newsAuthor}</span></span>

@@ -33,7 +33,7 @@ const OurBlogs = ({ ourAllBlogs }) => {
                 <div className="text-center my-16">
                     <motion.h2
                         animate={
-                            { x: 50, }
+                            { x: [0,20,0] }
                         }
                         transition={
                             { duration: 2, delay: 1, ease: easeOut, repeat: Infinity }
@@ -49,7 +49,7 @@ const OurBlogs = ({ ourAllBlogs }) => {
 
                         >Recent Blogs</motion.span> </motion.h2>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12 mx-auto max-w-7xl'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12 mx-auto max-w-7xl px-4 md:px-8 lg:px-0'>
                     {
                         ourAllBlogs?.map((blog, idx) => <BlogsCard key={idx} blog={blog}></BlogsCard>)
                     }

@@ -31,18 +31,18 @@ const BlogDetails = () => {
 
     return (
         <>
-            <div className='max-w-7xl mx-auto'>
-                <h2 className='text-2xl text-center my-8 font-extrabold'>{newsHeadline}</h2>
-                <div>
+            <div className='max-w-7xl mx-auto md:mx-0'>
+                <h2 className='text-2xl my-8 w-[90%] lg:w-[95%] mx-auto font-extrabold'>{newsHeadline}</h2>
+                <div className='w-[90%] lg:w-[95%] mx-auto'>
                     <img 
-                    className='w-full object-contain h-[400px]' src={newsImage} alt="" />
-                    <div className='mt-28 mb-8'>
+                    className='w-[95%] h-[280px] lg:h-[480px]' src={newsImage} alt="" />
+                    <div className='mt-8 mb-4 lg:mt-28 lg:mb-8'>
                         <p>Published Date: {publishedDate}</p>
                         <span>Written By: <span className='font-bold text-gray-400'>{newsAuthor}</span></span>
                     </div>
                 </div>
 
-                <p className='text-gray-600 text-justify'>
+                <p className='text-gray-600 text-justify w-[90%] lg:w-[95%] mx-auto'>
                     {newsContent}
                 </p>
 

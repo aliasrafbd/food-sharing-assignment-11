@@ -33,7 +33,7 @@ const Home = () => {
             <Slider></Slider>
             <FeaturedFoods featuredFoods={featuredFoods}></FeaturedFoods>
             <AboutUs servedInTotal={servedInTotal}></AboutUs>
-            {/* <OurBlogs ourAllBlogs={ourAllBlogs}></OurBlogs> */}
+            <OurBlogs ourAllBlogs={ourAllBlogs}></OurBlogs>
         </div>
     );
 };

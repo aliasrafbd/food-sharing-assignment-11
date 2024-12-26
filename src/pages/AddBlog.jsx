@@ -73,7 +73,7 @@ const AddBlog = () => {
                         <span className="label-text">Published Date</span>
                     </label>
                     <DatePicker
-                        className='w-full h-12 pl-1'
+                        className='w-full h-12 pl-1 input input-bordered'
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
                         dateFormat="yyyy-MM-dd" // Custom format

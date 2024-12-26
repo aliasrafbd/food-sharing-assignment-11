@@ -7,8 +7,6 @@ import AwardsCounter from './AwardsCounter';
 
 const AboutUs = ({ servedInTotal }) => {
 
-    // console.log(servedInTotal);
-
     const [servedPeople, setServedPeople] = useState({})
 
 

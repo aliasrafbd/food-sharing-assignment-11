@@ -29,11 +29,14 @@
    - User can login with their personal email or Google Email.
    - Registered user can view all available foods in our platform.
    - Get info about featured food (a food which has highest quantity).
+   - Get info about our history
+   - Can read blogs about food hunger.
 
 
 5. **NPM packages I have used in my project:**
-   - Tenstack Query
+   - Tenstack Query (Used in add food and add blog)
    - Framer Motion
+   - react intersection-observer (in homepage extra section- Our history)
    - Axios
    - AOS
    - Cookie-Parser

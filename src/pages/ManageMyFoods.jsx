@@ -10,19 +10,11 @@ const ManageMyFoods = () => {
     const [availFoods, setAvailFoods] = useState([]);
 
     const { user } = useContext(AuthContext);
-    // console.log(user?.email);
-
-    // const [currentUserEmail, setcurrentUserEmail] = useState(user?.email);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        // fetch(`http://localhost:4000/availablefoods/:id`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         setFood(data);
-        //     })
+        
 
         axios.get(`http://localhost:4000/availablefoods?currEmail=${user?.email}`, { withCredentials: true })
             .then(res => {
@@ -61,14 +53,13 @@ const ManageMyFoods = () => {
                             });
                             const remaining = availFoods?.filter(food => food._id !== id);
                             setAvailFoods(remaining);
-                            // navigate("/availablefoods")
                         }
                     })
             }
         });
     }
 
-    // const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, name, userEmail, foodStatus } = food;
+    
 
     return (
         <>

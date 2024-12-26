@@ -27,7 +27,7 @@ const Footer = () => {
                         <a className="link link-hover">Jobs</a>
                     </div>
                 </nav>
-                <nav className='my-4'>
+                <nav className=''>
                     <h6 className="footer-title">Social</h6>
                     <div className='flex flex-row gap-4'>
                         <a href='https://www.facebook.com/aliasraf15' className="link text-3xl link-hover"><FaFacebook></FaFacebook></a>

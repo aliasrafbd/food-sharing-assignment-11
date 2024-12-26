@@ -94,7 +94,7 @@ const AvailableFoods = () => {
     return (
         <>
             <div className='mx-auto max-w-7xl'>
-                <div className='flex items-center lg:mr-0 mr-4 justify-end'>
+                <div className='flex items-center mr-4 justify-end'>
                     <div className='w-[400px] text-right mt-6 mb-4'>
                         <input
                             onChange={(e) => setSearch(e.target.value)}
@@ -120,7 +120,7 @@ const AvailableFoods = () => {
                 <div className='mx-auto max-w-7xl '>
                     <button
                         onClick={toggleGrid}
-                        className={`absolute top-[150px] md:top-[210px] lg:top-[100px] right-0 lg:right-28 text-3xl mb-4 mr-4 lg:mr-0 px-4 py-2 hidden md:block`}
+                        className={`absolute top-[150px] md:top-[210px] lg:top-[200px] right-0 lg:right-[104px] text-3xl mb-4 mr-4 md:mr-0 lg:mr-4 px-4 py-2 hidden md:block`}
                     >
                         {
                             isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>

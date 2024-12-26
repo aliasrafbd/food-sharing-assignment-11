@@ -15,7 +15,7 @@ const FoodCard = ({ food }) => {
         <div className='border-b-2 mb-6 md:mb-0 flex flex-col mx-auto w-[90%]'>
             <img
                 data-aos="zoom-in"
-                className=' mx-auto w-full h-[200px] md:h-[400px] lg:h-[400px] rounded-lg mb-2' src={foodImage} alt="" />
+                className=' mx-auto w-full h-[200px] md:h-[250px] lg:h-[400px] rounded-lg mb-2' src={foodImage} alt="" />
             <div className='flex-grow'>
                 <h1><span className='text-lg font-bold mb-2'>{foodName}</span></h1>
                 <h2 className='text-sm text-gray-500'>Food ID: {_id}</h2>

@@ -64,7 +64,7 @@ const FoodDetails = () => {
 
     return (
         <>
-            <div className='grid grid-cols-1 justify-center items-center md:grid-cols-2 gap-8 max-w-7xl mx-auto'>
+            <div className='grid grid-cols-1 justify-center items-center lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-12 lg:px-0'>
                 <div>
                     <img className='w-full h-[400px]' src={foodImage} alt="" />
                 </div>

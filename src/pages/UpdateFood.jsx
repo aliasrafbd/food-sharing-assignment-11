@@ -51,7 +51,7 @@ const UpdateFood = () => {
     return (
         <>
             <h2 className='font-bold text-3xl mx-auto max-w-[120px] r block text-center mb-2 p-2'>Update</h2>
-            <form onSubmit={handleUpdateFood} className="card-body max-w-7xl mx-auto block md:grid gap-4 grid-cols-1">
+            <form onSubmit={handleUpdateFood} className="card-body max-w-7xl mx-auto block lg:grid gap-4 grid-cols-2">
 
                 {/* Food Name  */}
                 <div className="form-control">
@@ -102,7 +102,7 @@ const UpdateFood = () => {
                 </div>
 
                 {/* Additional Notes */}
-                <div className="form-control">
+                <div className="form-control mb-6">
                     <label className="label">
                         <span className="label-text font-bold">Additional Notes</span>
                     </label>
@@ -111,7 +111,7 @@ const UpdateFood = () => {
                         name='additionalNotes' defaultValue={additionalNotes} placeholder="Additional Notes" className="input input-bordered" required />
                 </div>
 
-                <input type="submit" className='btn my-8 w-full md:my-0 text-2xl hover:text-white col-span-2 btn-error' value="Update" />
+                <input type="submit" className='btn w-full text-2xl hover:text-white col-span-2 btn-error' value="Update" />
             </form>
         </>
     );

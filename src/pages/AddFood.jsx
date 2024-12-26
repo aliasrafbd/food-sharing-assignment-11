@@ -32,7 +32,6 @@ const AddFood = () => {
 
     const [selectedDate, setSelectedDate] = useState(null);
 
-
     const handleAddFood = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -117,7 +116,7 @@ const AddFood = () => {
                         <span className="label-text">Expired Date</span>
                     </label>
                     <DatePicker
-                        className='w-full h-12 pl-1'
+                        className='w-full h-12 pl-1 input input-bordered'
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
                         dateFormat="yyyy-MM-dd" // Custom format

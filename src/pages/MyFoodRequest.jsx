@@ -10,12 +10,7 @@ const MyFoodRequest = () => {
     console.log(user?.email);
 
     useEffect(() => {
-        // fetch(`http://localhost:4000/availablefoods/:id`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         setFood(data);
-        //     })
+        
 
         axios.get(`http://localhost:4000/requestedfoods?currEmail=${user?.email}`, {withCredentials: true})
             .then(res => {
@@ -32,12 +27,10 @@ const MyFoodRequest = () => {
             </h2>
             <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center w-[95%] overflow-x-auto lg:overflow-x-hidden bg-red-200 py-4">
                 <table className="table text-center">
-                    {/* head */}
                     <thead className='font-extrabold'>
                         <tr>
                             <th></th>
                             <th>Food Image</th>
-                            {/* <th>ID</th> */}
                             <th>Food Name</th>
                             <th>Food Donator Name</th>
                             <th>User Email</th>
@@ -48,7 +41,6 @@ const MyFoodRequest = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 2 */}
 
                         {
 
@@ -56,7 +48,6 @@ const MyFoodRequest = () => {
                                 <tr className="hover"></tr>
                                 <th>{idx + 1}</th>
                                 <td className='flex justify-center items-center'><img className='h-16 w-16 rounded-full' src={food.foodImage} alt="not valid" /></td>
-                                {/* <td>{food._id}</td> */}
                                 <td>{food.foodName}</td>
                                 <td>{food.foodDonatorName}</td>
                                 <td>{food.userEmail}</td>
