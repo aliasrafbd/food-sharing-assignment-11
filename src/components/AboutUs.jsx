@@ -37,7 +37,7 @@ const AboutUs = ({ servedInTotal }) => {
             <div className="text-center mt-12">
                 <motion.h2
                     animate={
-                        { x: 50, }
+                        { x: [0,20,0] }
                     }
                     transition={
                         { duration: 2, delay: 1, ease: easeOut, repeat: Infinity }

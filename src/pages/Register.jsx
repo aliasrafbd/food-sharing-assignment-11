@@ -11,7 +11,7 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const {logOut} = useContext(AuthContext);
+    const { logOut } = useContext(AuthContext);
 
     const { user, setUser, createANewUser, updateUserProfile, googleLogIn } = useContext(AuthContext)
 
@@ -59,13 +59,13 @@ const Register = () => {
 
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
-                        logOut();
-                        navigate("/login");
+
                     })
                     .catch((error) => {
                     })
-                
-                
+                logOut();
+                navigate("/login");
+
             })
             .catch((error) => {
                 console.log(error);
@@ -100,7 +100,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="photo-url" className="input input-bordered" required />
+                                <input type="url" name="photo" placeholder="photo-url" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">

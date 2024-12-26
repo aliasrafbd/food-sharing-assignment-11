@@ -14,8 +14,8 @@ const Slider = () => {
 
     return (
         <>
-            <div className="max-w-7xl mx-auto">
-                <h3 className="md:text-4xl text-2xl font-bold text-center mt-8 mt-20 mb-12">Our Activities</h3>
+            <div className="max-w-7xl mx-auto my-16 md:my-0">
+                <h3 className="md:text-4xl text-2xl font-bold text-center mt-12 mb-12">Our Activities</h3>
                 <div className="max-w-7xl mx-auto my-6">
                     <Swiper
 

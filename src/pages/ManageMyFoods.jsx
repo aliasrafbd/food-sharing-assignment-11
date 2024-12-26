@@ -73,11 +73,11 @@ const ManageMyFoods = () => {
     return (
         <>
 
-            <h2 className='text-center max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
+            <h2 className='text-center w-[95%] ml-4 max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Foods
             </h2>
-            <div className="max-w-7xl mx-auto bg-red-200 py-4">
-                <table className="table">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center w-[95%] overflow-x-auto lg:overflow-x-hidden bg-red-200 py-4">
+                <table className="table text-center">
                     {/* head */}
                     <thead className='font-extrabold hover:text-red-400'>
                         <tr>

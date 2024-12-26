@@ -8,6 +8,9 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
 
     const currentDate = new Date().toLocaleString();
 
+    const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = foodDetails;
+
+
     const { user, reqFoodData, setReqFoodData } = useContext(AuthContext);
 
     console.log(user);
@@ -19,6 +22,7 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
         formData.foodStatus = "requested";
         
         console.log("form dataaa", formData);
+
 
         // reqFoodData.donatorImage = user?.photoURL;
         // reqFoodData.foodDonatorName = user?.displayName;
@@ -103,7 +107,7 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
                                 <label className="label">
                                     <span className="label-text">Food Donator Email</span>
                                 </label>
-                                <input type="text" readOnly defaultValue={userEmail} name='foodDonatorEmail' className="input input-bordered" required />
+                                <input type="text" readOnly defaultValue={foodDonatorEmail} name='foodDonatorEmail' className="input input-bordered" required />
                             </div>
 
                             {/* Reqeusted Date  */}

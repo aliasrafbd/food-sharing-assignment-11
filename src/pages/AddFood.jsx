@@ -14,7 +14,7 @@ const AddFood = () => {
 
     const { isPending, mutateAsync, isError } = useMutation({
         mutationFn: async allJobsAvailable => {
-            await axios.post("http://localhost:4000/availablefoods", allJobsAvailable)
+            await axios.post("http://localhost:4000/availablefoods", allJobsAvailable, {withCredentials: true})
         },
         onSuccess: () => {
             Swal.fire({
@@ -24,6 +24,7 @@ const AddFood = () => {
                 confirmButtonText: 'Close'
             })
         }
+        
     })
 
     {/*  Donator Image, Name, Email (from Logged In User)  */ }
@@ -44,6 +45,9 @@ const AddFood = () => {
         initialData.foodDonatorName = user?.displayName;
         initialData.foodDonatorEmail = user?.email;
         initialData.foodStatus = "Available";
+        e.target.reset();
+
+        
 
         // send data to the server
         await mutateAsync(initialData)
@@ -73,7 +77,7 @@ const AddFood = () => {
     return (
         <>
             <h2 className='font-extrabold text-3xl text-center max-w-7xl mx-auto'>Add Food</h2>
-            <form onSubmit={handleAddFood} className="card-body grid grid-cols-2 gap-6 max-w-7xl mx-auto">
+            <form onSubmit={handleAddFood} className="card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
 
                 {/* Food Name  */}
                 <div className="form-control">
@@ -131,7 +135,7 @@ const AddFood = () => {
 
                 {/*  Donator Image, Name, Email (from Logged In User)  */}
                 {/* Food status write to db by manual */}
-                <input type="submit" className='btn col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding Food" : "Add Food"} />
+                <input type="submit" className='btn col-span-1 md:col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding Food" : "Add Food"} />
             </form>
         </>
     );

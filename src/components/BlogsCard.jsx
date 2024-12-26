@@ -10,15 +10,15 @@ const BlogsCard = ({ blog }) => {
     const { _id, newsHeadline, newsAuthor, newsImage, publishedDate } = blog
 
     return (
-        <div>
+        <div className='flex flex-col'>
             <img 
             data-aos="zoom-in"
-            className='w-full' src={newsImage} alt="" />
+            className='w-full h-[400px]' src={newsImage} alt="" />
             <div className='flex justify-between my-2'>
                 <span>{publishedDate}</span>
-                <span>Written By: <span className='font-bold text-gray-400'>{newsAuthor}</span></span>
+                <span>Source: <span className='font-bold text-gray-400'>{newsAuthor}</span></span>
             </div>
-            <h1 className='text-xl font-extrabold'>
+            <h1 className='text-xl font-extrabold flex-grow'>
                 {newsHeadline}
             </h1>
             <div className='mt-6'>

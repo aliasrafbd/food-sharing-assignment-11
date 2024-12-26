@@ -32,25 +32,25 @@ const FeaturedFoods = ({ featuredFoods }) => {
         <>
             <div className="mx-auto max-w-7xl">
                 <div className="text-center">
-                    <motion.h2
+                <motion.h2
+                    animate={
+                        { x: [0,20,0] }
+                    }
+                    transition={
+                        { duration: 2, delay: 1, ease: easeOut, repeat: Infinity }
+                    }
+
+                    className="mb-4 text-3xl font-bold">Featured <motion.span
                         animate={
-                            { x: 50, }
+                            { color: ['#33df33', '#99ff66', '#f61f99'], }
                         }
                         transition={
-                            { duration: 2, delay: 1, ease: easeOut, repeat: Infinity }
+                            { duration: 1.5, delay: 1, repeat: Infinity }
                         }
 
-                        className="mb-12 text-3xl font-bold">Featured <motion.span
-                            animate={
-                                { color: ['#33df33', '#33ff66', '#ff6133'], }
-                            }
-                            transition={
-                                { duration: 1.5, delay: 1, repeat: Infinity }
-                            }
-
-                        >Foods</motion.span> </motion.h2>
+                    >Foods</motion.span> </motion.h2>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 mx-auto max-w-7xl'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4 my-12 mx-auto max-w-7xl'>
                     {
                         featuredFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)
                     }

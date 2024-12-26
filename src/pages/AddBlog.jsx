@@ -15,10 +15,9 @@ const AddBlog = () => {
     const [selectedDate, setSelectedDate] = useState(null);
    
 
-
     const { isPending, mutateAsync, isError } = useMutation({
         mutationFn: async allBlogs => {
-            await axios.post("http://localhost:4000/blogs", allBlogs)
+            await axios.post("http://localhost:4000/blogs", allBlogs, {withCredentials: true})
         },
         onSuccess: () => {
             Swal.fire({
@@ -28,6 +27,7 @@ const AddBlog = () => {
                 confirmButtonText: 'Close'
             })
         }
+        
     })
 
     const handleAddBlog = async (e) => {
@@ -42,13 +42,14 @@ const AddBlog = () => {
         await mutateAsync(initialData)
 
         console.log(initialData);
+        e.target.reset();
 
     }
 
     return (
         <>
             <h2 className='font-extrabold text-3xl text-center max-w-7xl mx-auto'>Add Blog</h2>
-            <form onSubmit={handleAddBlog} className="card-body grid grid-cols-2 gap-6 max-w-7xl mx-auto">
+            <form onSubmit={handleAddBlog} className="card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
 
                 {/* News Headline  */}
                 <div className="form-control">
@@ -89,14 +90,14 @@ const AddBlog = () => {
                 </div>
 
                 {/* News Content */}
-                <div className="form-control col-span-2">
+                <div className="form-control col-span-1 md:col-span-2">
                     <label className="label">
                         <span className="label-text">News Content</span>
                     </label>
                     <textarea rows="5" name='newsContent' className="textarea textarea-bordered" placeholder="News Content"></textarea>
                 </div>
 
-                <input type="submit" className='btn col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding Blog" : "Add Blog"} />
+                <input type="submit" className='btn col-span-1 md:col-span-2 my-4 mx-auto w-28 justify-center items-center px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-pink-600 text-white font-medium shadow-md hover:shadow-lg focus:outline-none' value={isPending ? "Adding Blog" : "Add Blog"} />
             </form>
         </>
     );

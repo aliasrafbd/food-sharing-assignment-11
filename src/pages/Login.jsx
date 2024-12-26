@@ -47,7 +47,7 @@ const Login = () => {
                 });
                 setLoading(false)
                 // navigate(location?.state ? location.state : "/");
-                // navigate("/");
+                navigate("/");
 
                 const user = { email: email }
 
@@ -83,7 +83,7 @@ const Login = () => {
                 });
                 setLoading(false)
                 // navigate(location?.state ? location.state : "/");
-                // navigate("/");
+                navigate("/");
             })
     }
 

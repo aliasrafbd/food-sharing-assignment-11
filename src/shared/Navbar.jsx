@@ -10,7 +10,6 @@ const Navbar = () => {
 
     const { loading, setLoading, user, setUser, logOut } = useContext(AuthContext);
 
-
     const { pathname } = useLocation();
 
     console.log(user);
@@ -40,9 +39,9 @@ const Navbar = () => {
 
     return (
         <div className="">
-            <div className="navbar mx-auto max-w-7xl px-4 md:px-16 py-8" >
+            <div className="navbar mx-auto max-w-9xl lg:max-w-7xl px-4 lg:px-8 md:px-12 py-8" >
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown mr-6 md:mr-12 lg:mr-0">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +82,8 @@ const Navbar = () => {
                                 { duration: 8, ease: easeOut, repeat: Infinity }
                             }
 
-                            className="mb-12 text-xl font-bold">Food for <motion.span
-                                animate={
+                            className="mb-12 text-xl text-md font-bold">Food for <motion.span
+                                animate= {
                                     { color: ['#33df33', '#33ff66', '#ff6133'], }
                                 }
                                 transition={

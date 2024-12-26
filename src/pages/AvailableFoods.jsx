@@ -94,7 +94,7 @@ const AvailableFoods = () => {
     return (
         <>
             <div className='mx-auto max-w-7xl'>
-                <div className='flex items-center justify-end'>
+                <div className='flex items-center lg:mr-0 mr-4 justify-end'>
                     <div className='w-[400px] text-right mt-6 mb-4'>
                         <input
                             onChange={(e) => setSearch(e.target.value)}
@@ -107,11 +107,11 @@ const AvailableFoods = () => {
                     </div>
                 </div>
 
-                <div className='flex justify-end'>
-                    <button onClick={sortByDate} className='btn btn-success my-4'>Sort by Date</button>
+                <div className='flex justify-end lg:mr-4 mr-4'>
+                    <button onClick={sortByDate} className='btn btn-success my-4'>Sort by Expired Date</button>
                 </div>
 
-                <div className={`grid gap-8 mx-auto max-w-7xl ${isThreeColumn ? "grid-cols-3" : "grid-cols-2"
+                <div className={`grid grid-cols-1 gap-2 md:gap-4 my-12 mx-auto max-w-7xl ${isThreeColumn ? "md:grid-cols-3" : "md:grid-cols-2" 
                     }`}>
                     {
                         search ? (searchFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : sortedBYFoods ? (sortedBYFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>)) : (availableFoods?.map((food, idx) => <FoodCard key={idx} food={food}></FoodCard>))
@@ -120,7 +120,7 @@ const AvailableFoods = () => {
                 <div className='mx-auto max-w-7xl '>
                     <button
                         onClick={toggleGrid}
-                        className={`absolute top-[100px] right-28 text-3xl mb-4 px-4 py-2`}
+                        className={`absolute top-[150px] md:top-[210px] lg:top-[100px] right-0 lg:right-28 text-3xl mb-4 mr-4 lg:mr-0 px-4 py-2 hidden md:block`}
                     >
                         {
                             isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>
