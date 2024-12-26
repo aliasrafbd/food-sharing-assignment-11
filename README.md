@@ -8,7 +8,6 @@
 1. **Name of the Project** <br>
    Food Sharing BD
 
-
 2. **Purpose** <br>
    In current world, Food Management is very important. Even though, we are in modern world, A millions of people are (especially in Africa continent) dyeing every year for lack of food. In Arabian countries or other rich countries people are wasting food every day for abundance of food. In Bangladesh, our platform can help poor and also rich people by sharing their food. A people can donate food through our website and request food for their needy people or people. 
 
@@ -20,7 +19,7 @@
    - Mitigate sufferings sharing food.
 
 3. **Live URL** <br>
-   [https://eco-adventure-experience-p-09-002.netlify.app/](https://eco-adventure-experience-p-09-002.netlify.app/)
+   [https://food-sharing-26-12-24.netlify.app/](https://food-sharing-26-12-24.netlify.app/)
 
 
 4. **Key Features of my Project:**

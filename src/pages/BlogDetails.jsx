@@ -15,7 +15,7 @@ const BlogDetails = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:4000/blogs/${id}`)
+        axios.get(`https://food-sharing-server-phi.vercel.app/blogs/${id}`)
             .then(res => {
                 setBlog(res.data);
             })

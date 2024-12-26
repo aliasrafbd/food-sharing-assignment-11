@@ -22,7 +22,7 @@ const FoodDetailsModal = ({ foodDetails, text, setText, userEmail, isOpen, onClo
         formData.foodStatus = "requested";
         
 
-        fetch('http://localhost:4000/requestedfoods', {
+        fetch('https://food-sharing-server-phi.vercel.app/requestedfoods', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

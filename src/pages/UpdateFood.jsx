@@ -24,7 +24,7 @@ const UpdateFood = () => {
         updatedFoodData.donatorImage = donatorImage;
         updatedFoodData.foodStatus = foodStatus;
 
-        fetch(`http://localhost:4000/availablefoods/${_id}`, {
+        fetch(`https://food-sharing-server-phi.vercel.app/availablefoods/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

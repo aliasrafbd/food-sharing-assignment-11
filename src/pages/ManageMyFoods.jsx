@@ -14,9 +14,8 @@ const ManageMyFoods = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        
 
-        axios.get(`http://localhost:4000/availablefoods?currEmail=${user?.email}`, { withCredentials: true })
+        axios.get(`https://food-sharing-server-phi.vercel.app/availablefoods?currEmail=${user?.email}`, { withCredentials: true, })
             .then(res => {
                 setAvailFoods(res.data)
             })
@@ -39,7 +38,7 @@ const ManageMyFoods = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:4000/availablefoods/${id}`, {
+                fetch(`https://food-sharing-server-phi.vercel.app/availablefoods/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -64,10 +63,10 @@ const ManageMyFoods = () => {
     return (
         <>
 
-            <h2 className='text-center w-[95%] ml-4 max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
+            <h2 className='text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Foods
             </h2>
-            <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center w-[95%] overflow-x-auto lg:overflow-x-hidden bg-red-200 py-4">
+            <div className="max-w-7xl mx-auto px-8 flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200 ">
                 <table className="table text-center">
                     
                     <thead className='font-extrabold hover:text-red-400'>
@@ -81,7 +80,6 @@ const ManageMyFoods = () => {
                             <th>Expired Date</th>
                             <th>Food Status </th>
                             <th>Pickup Location </th>
-                            <th>Additional Notes</th>
                             <th> Action </th>
                         </tr>
                     </thead>
@@ -102,7 +100,6 @@ const ManageMyFoods = () => {
                                 <td>{food.expiredDate}</td>
                                 <td>{food.foodStatus}</td>
                                 <td>{food.pickupLocation}</td>
-                                <td>{food.additionalNotes}</td>
                                 <td className='flex gap-4'>
                                     <Link className='btn my-2 btn-secondary' to={`/updateFood/${food._id}`}>Update</Link>
                                     <button className='btn my-2 btn-error' onClick={() => handleDeleteFood(food._id)}>X</button>

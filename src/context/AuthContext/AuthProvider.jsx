@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const AuthProvider = ({ children }) => {
 
-
     const googleProvider = new GoogleAuthProvider();
 
     const [user, setUser] = useState(null);
@@ -49,7 +48,6 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
@@ -57,14 +55,14 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser.email }
 
-                axios.post('http://localhost:4000/jwt', user, { withCredentials: true })
+                axios.post('https://food-sharing-server-phi.vercel.app/jwt', user, { withCredentials: true, })
                     .then(res => {
                         console.log("login", res.data)
                         setLoading(false);
                     })
             }
             else {
-                axios.post('http://localhost:4000/logout', {}, { withCredentials: true })
+                axios.post('https://food-sharing-server-phi.vercel.app/logout', {}, { withCredentials: true, })
                     .then(res => {
                         console.log("logout", res.data);
                         setLoading(false);

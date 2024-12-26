@@ -37,16 +37,12 @@ const AvailableFoods = () => {
 
     const availFoods = useLoaderData();
 
-
-
     setAvailableFoods(availFoods);
 
     console.log(availFoods);
 
-
-
     useEffect(() => {
-        axios.get(`http://localhost:4000/foods/availablefoods?searchParams=${search}`)
+        axios.get(`https://food-sharing-server-phi.vercel.app/foods/availablefoods?searchParams=${search}`)
             .then(res => {
                 setSearchFoods(res.data);
             })
@@ -63,7 +59,7 @@ const AvailableFoods = () => {
     const { data, isLoading } = useQuery({
         queryKey: ['allAvailJobs'],
         queryFn: async () => {
-            const { data } = await axios.get("http://localhost:4000/foods/availablefoods", { withCredentials: true })
+            const { data } = await axios.get("https://food-sharing-server-phi.vercel.app/foods/availablefoods", { withCredentials: true, })
             return data;
         }
     })
@@ -94,7 +90,7 @@ const AvailableFoods = () => {
         <>
             <div className='mx-auto max-w-7xl'>
                 <div className='flex items-center mr-4 justify-end'>
-                    <div className='w-[400px] text-right mt-6 mb-4'>
+                    <div className='w-[370px] md:w-[400px] text-right mt-6 mb-4'>
                         <input
                             onChange={(e) => setSearch(e.target.value)}
                             type="text"

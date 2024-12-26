@@ -14,7 +14,7 @@ const AddFood = () => {
 
     const { isPending, mutateAsync, isError } = useMutation({
         mutationFn: async allJobsAvailable => {
-            await axios.post("http://localhost:4000/availablefoods", allJobsAvailable, {withCredentials: true})
+            await axios.post("https://food-sharing-server-phi.vercel.app/availablefoods", allJobsAvailable, {withCredentials: true,})
         },
         onSuccess: () => {
             Swal.fire({

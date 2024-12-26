@@ -12,7 +12,7 @@ const MyFoodRequest = () => {
     useEffect(() => {
         
 
-        axios.get(`http://localhost:4000/requestedfoods?currEmail=${user?.email}`, {withCredentials: true})
+        axios.get(`https://food-sharing-server-phi.vercel.app/requestedfoods?currEmail=${user?.email}`, {withCredentials: true,})
             .then(res => {
                 setRequestedFoods(res.data);
             })
@@ -22,10 +22,10 @@ const MyFoodRequest = () => {
 
     return (
         <>
-            <h2 className='text-center max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
+            <h2 className='text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Food Request
             </h2>
-            <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center w-[95%] overflow-x-auto lg:overflow-x-hidden bg-red-200 py-4">
+            <div className="max-w-7xl mx-auto px-8 flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200">
                 <table className="table text-center">
                     <thead className='font-extrabold'>
                         <tr>

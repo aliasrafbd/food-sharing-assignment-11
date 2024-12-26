@@ -11,7 +11,7 @@ const AboutUs = ({ servedInTotal }) => {
 
 
     useEffect(() => {
-        axios.post('http://localhost:4000/foods/servedintotal', servedInTotal)
+        axios.post('https://food-sharing-server-phi.vercel.app/foods/servedintotal', servedInTotal)
             .then(res => {
                 console.log(res.data);
             })
@@ -19,7 +19,7 @@ const AboutUs = ({ servedInTotal }) => {
     }, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/foods/servedintotal`)
+        axios.get(`https://food-sharing-server-phi.vercel.app/foods/servedintotal`)
             .then(res => {
                 setServedPeople(res.data);
             })

@@ -78,7 +78,7 @@ const Navbar = () => {
                                 { duration: 8, ease: easeOut, repeat: Infinity }
                             }
 
-                            className="mb-12 text-xl text-md font-bold">Food for <motion.span
+                            className="mb-12 text-sm md:text-xl font-bold">Food for <motion.span
                                 animate= {
                                     { color: ['#33df33', '#33ff66', '#ff6133'], }
                                 }

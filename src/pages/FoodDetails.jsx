@@ -17,7 +17,7 @@ const FoodDetails = () => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:4000/availablefoods/${id}`)
+        axios.get(`https://food-sharing-server-phi.vercel.app/availablefoods/${id}`)
             .then(res => {
                 setFood(res.data);
             })
@@ -38,8 +38,7 @@ const FoodDetails = () => {
 
     const closeModal = () => {
 
-        //send data and get data for deleting from available foods
-        fetch(`http://localhost:4000/availablefoods/${_id}`, {
+        fetch(`https://food-sharing-server-phi.vercel.app/availablefoods/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

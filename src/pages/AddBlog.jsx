@@ -17,7 +17,7 @@ const AddBlog = () => {
 
     const { isPending, mutateAsync, isError } = useMutation({
         mutationFn: async allBlogs => {
-            await axios.post("http://localhost:4000/blogs", allBlogs, {withCredentials: true})
+            await axios.post("https://food-sharing-server-phi.vercel.app/blogs", allBlogs, {withCredentials: true,})
         },
         onSuccess: () => {
             Swal.fire({
@@ -76,8 +76,8 @@ const AddBlog = () => {
                         className='w-full h-12 pl-1 input input-bordered'
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
-                        dateFormat="yyyy-MM-dd" // Custom format
-                        placeholderText="Published Date" // Placeholder text
+                        dateFormat="yyyy-MM-dd" 
+                        placeholderText="Published Date" 
                     />
                 </div>
 

@@ -25,10 +25,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async () => {
-                    const featuredFoodsRes = await fetch("http://localhost:4000/foods/featured");
+                    const featuredFoodsRes = await fetch("https://food-sharing-server-phi.vercel.app/foods/featured");
                     const featuredFoods = await featuredFoodsRes.json();
 
-                    const ourBlogsRes = await fetch("http://localhost:4000/blogs");
+                    const ourBlogsRes = await fetch("https://food-sharing-server-phi.vercel.app/blogs");
                     const ourAllBlogs = await ourBlogsRes.json();
 
                     return { featuredFoods, ourAllBlogs }
@@ -66,17 +66,17 @@ const router = createBrowserRouter([
             {
                 path: "/food/:id",
                 element: <FoodDetails></FoodDetails>,
-                loader: ({ params }) => fetch("http://localhost:4000/availablefoods"),
+                loader: ({ params }) => fetch("https://food-sharing-server-phi.vercel.app/availablefoods"),
             },
             {
                 path: "/blogdetails/:id",
                 element: <BlogDetails></BlogDetails>,
-                loader: ({ params }) => fetch("http://localhost:4000/blogs"),
+                loader: ({ params }) => fetch("https://food-sharing-server-phi.vercel.app/blogs"),
             },
             {
                 path: "/updatefood/:id",
                 element: <UpdateFood></UpdateFood>,
-                loader: ({ params }) => fetch(`http://localhost:4000/availablefoods/${params.id}`),
+                loader: ({ params }) => fetch(`https://food-sharing-server-phi.vercel.app/availablefoods/${params.id}`),
             }
         ]
     },
