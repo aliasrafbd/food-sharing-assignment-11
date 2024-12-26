@@ -16,7 +16,7 @@
    - Donate food who have food abundance 
    - Needy people can make food request
    - Food management make easy.
-   - Mitigate sufferings sharing food.
+   - Mitigate sufferings by sharing food.
 
 3. **Live URL** <br>
    [https://food-sharing-26-12-24.netlify.app/](https://food-sharing-26-12-24.netlify.app/)
@@ -28,8 +28,8 @@
    - User can login with their personal email or Google Email.
    - Registered user can view all available foods in our platform.
    - Get info about featured food (a food which has highest quantity).
-   - Get info about our history
-   - Can read blogs about food hunger.
+   - Get info about our history (Extra section in Home)
+   - Can read blogs about food hunger. (Extra section in hhome)
 
 
 5. **NPM packages I have used in my project:**
