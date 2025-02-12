@@ -18,8 +18,7 @@ const FoodCard = ({ food }) => {
                 className=' mx-auto w-full h-[200px] md:h-[250px] lg:h-[400px] rounded-lg mb-2' src={foodImage} alt="" />
             <div className='flex-grow'>
                 <h1><span className='text-lg font-bold mb-2'>{foodName}</span></h1>
-                <h2 className='text-sm text-gray-500'>Food ID: {_id}</h2>
-                <h2 className='text-sm text-gray-500 mb-4'>Expired Date: {expiredDate}</h2>
+                <h2 className='text-sm text-gray-500'>{additionalNotes}</h2> <br />
 
                 <h2 className='text-sm text-gray-500 mb-4'>Food Quantity: <span className='font-bold'>{foodQuantity}</span></h2>
             </div>
