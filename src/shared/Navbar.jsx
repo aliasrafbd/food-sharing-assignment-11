@@ -19,23 +19,31 @@ const Navbar = () => {
 
         <NavLink to="/"><button><li className='py-1 px-3 font-semibold'>Home</li></button></NavLink>
         <NavLink to="/availablefoods"><button><li className='py-1 px-3 font-semibold'>Available Foods</li></button></NavLink>
-        <NavLink to="/addfood"><button><li className='py-1 px-3 font-semibold'>Add Food</li></button></NavLink>
-        <NavLink to="/managemyfoods"><button><li className='py-1 px-3 font-semibold'>Manage My Foods</li></button></NavLink>
-        <NavLink to="/myfoodrequest"><button><li className='py-1 px-3 font-semibold'>My Food Request</li></button></NavLink>
-        <NavLink to="/addblog"><button><li className='py-1 px-3 font-semibold'>Add Blog</li></button></NavLink>
+        {
+            user && <NavLink to="/addfood"><button><li className='py-1 px-3 font-semibold'>Add Food</li></button></NavLink>
+        }
+        {
+            user && <NavLink to="/managemyfoods"><button><li className='py-1 px-3 font-semibold'>Manage My Foods</li></button></NavLink>
+        }
+        {
+            user && <NavLink to="/myfoodrequest"><button><li className='py-1 px-3 font-semibold'>My Food Request</li></button></NavLink>
+        }
+        {
+            user && <NavLink to="/addblog"><button><li className='py-1 px-3 font-semibold'>Add Blog</li></button></NavLink>
+        }
 
         {
             !user && (<NavLink to="/login"><button><li className='py-1 px-3 font-semibold'>Login</li></button></NavLink>)
         }
         {
-            !user && (<NavLink to="/register"><button><li className='py-1 px-3 font-semibold'>SignUp</li></button></NavLink>)
+            !user && (<NavLink to="/register"><button><li className='py-1 px-3 font-semibold'>Sign Up</li></button></NavLink>)
         }
 
     </>)
 
     return (
-        <div className="">
-            <div className="navbar mx-auto max-w-9xl lg:max-w-7xl px-4 lg:px-8 md:px-12 py-8" >
+        <div className="bg-gray-50">
+            <div className="navbar mx-auto max-w-9xl lg:max-w-7xl px-4 lg:px-8 md:px-12" >
                 <div className="navbar-start">
                     <div className="dropdown mr-6 md:mr-12 lg:mr-0">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +77,7 @@ const Navbar = () => {
                                 { duration: 8, repeat: Infinity }
                             }
 
-                            className="max-w-lg w-24 h-24 mb-4 rounded-t-[45px]" />
+                            className="max-w-lg w-12 h-12 mb-4 rounded-t-[45px]" />
                         <motion.h2
                             animate={
                                 { x: [0, 50, 0] }

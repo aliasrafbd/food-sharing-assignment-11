@@ -29,7 +29,7 @@
    - Registered user can view all available foods in our platform.
    - Get info about featured food (a food which has highest quantity).
    - Get info about our history (Extra section in Home)
-   - Can read blogs about food hunger. (Extra section in hhome)
+   - Can read blogs about food hunger. (Extra section in home)
 
 
 5. **NPM packages I have used in my project:**

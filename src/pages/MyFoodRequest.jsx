@@ -25,7 +25,7 @@ const MyFoodRequest = () => {
             <h2 className='text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Food Request
             </h2>
-            <div className="max-w-7xl mx-auto px-8 flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200">
+            <div className="max-w-7xl mx-auto flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200">
                 <table className="table text-center">
                     <thead className='font-extrabold'>
                         <tr>

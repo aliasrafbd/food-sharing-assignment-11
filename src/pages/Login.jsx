@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import AuthContext from '../context/AuthContext/AuthContext';
 import Lottie from 'lottie-react';
-import LottieDataLogin from '../../src/assets/lottie/login-lottie.json';
+import LottieDataLogin from '../assets/lottie/login-lottie.json';
 
 const Login = () => {
 
@@ -114,7 +114,7 @@ const Login = () => {
                                 <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transition duration-300">Login</button>
 
                             </div>
-                            <p>
+                            <p> 
                                 {error.login ? <p className="text-red-600">{error.login}</p> : ""}
                             </p>
                             <p>Do not have a account? Please <Link className='text-blue-800 hover:font-bold' to="/register">Register</Link> </p>
