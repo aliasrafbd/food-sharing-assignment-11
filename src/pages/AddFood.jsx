@@ -52,9 +52,8 @@ const AddFood = () => {
 
     return (
         <>
-            <h2 className='font-extrabold text-3xl  text-center max-w-7xl mx-auto'>Add Food</h2>
+            <h2 className='mt-6 font-extrabold text-3xl  text-center max-w-7xl mx-auto'>Add Food</h2>
             <form onSubmit={handleAddFood} className="text-black dark:text-white card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
-
                 {/* Food Name  */}
                 <div className="form-control">
                     <label className="label">

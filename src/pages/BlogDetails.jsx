@@ -41,7 +41,7 @@ const BlogDetails = () => {
                     </div>
                 </div>
 
-                <p className='text-gray-600 text-justify w-[90%] lg:w-[95%] mx-auto'>
+                <p className='text-gray-900 dark:text-white text-justify w-[90%] lg:w-[95%] mx-auto'>
                     {newsContent}
                 </p>
 

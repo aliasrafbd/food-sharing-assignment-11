@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import FoodDetailsModal from '../components/FoodDetailsModal';
 import AuthContext from '../context/AuthContext/AuthContext';
 import Swal from 'sweetalert2';
+import Loading from '../components/Loading';
 
 const FoodDetails = () => {
 
@@ -11,17 +12,22 @@ const FoodDetails = () => {
 
     const { id } = useParams();
 
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-
     const [food, setFood] = useState({});
+
+    console.log(loading);
+
+
+   
 
     useEffect(() => {
 
         axios.get(`https://food-sharing-server-phi.vercel.app/availablefoods/${id}`)
             .then(res => {
                 setFood(res.data);
+                setLoading(false);
             })
-
     }, [])
 
     const { _id, foodName, foodImage, foodQuantity, pickupLocation, additionalNotes, expiredDate, donatorImage, foodDonatorName, foodDonatorEmail, foodStatus } = food;
@@ -35,6 +41,10 @@ const FoodDetails = () => {
     const openModal = () => {
         setIsModalOpen(true);
     };
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const closeModal = () => {
 
@@ -56,21 +66,17 @@ const FoodDetails = () => {
 
     };
 
-
     return (
         <>
-            <div className='grid grid-cols-1 justify-center items-center lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-12 lg:px-0'>
+            <div className='grid grid-cols-1 justify-center items-center lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-12 lg:px-0 my-6'>
                 <div>
                     <img className='w-full h-[400px]' src={foodImage} alt="" />
                 </div>
 
                 <div className="md:col-span-1">
                     <h2 className="text-2xl font-bold mb-2">{foodName}</h2>
-                    <p className="text-gray-600 mb-4">Food Id: {_id}</p>
+                    <p>{additionalNotes}</p>
 
-                    <div className="mb-4">
-                        <span className="text-xl font-semibold text-gray-800">Food Quantity: {foodQuantity}</span>
-                    </div>
 
                     <h3 className="text-lg font-semibold mt-8 mb-4">Food Details:</h3>
                     <ul className="list-disc ml-4">

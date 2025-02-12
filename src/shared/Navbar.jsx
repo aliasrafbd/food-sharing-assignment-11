@@ -46,7 +46,7 @@ const Navbar = () => {
     </>)
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4">
+        <div className="bg-gray-100 sticky top-0 z-50 dark:bg-gray-900 text-black dark:text-white p-4">
             <div className="navbar mx-auto max-w-9xl lg:max-w-7xl px-4 lg:px-8 md:px-12" >
                 <div className="navbar-start">
                     <div className="dropdown mr-6 md:mr-12 lg:mr-0">
@@ -66,7 +66,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-cyan-500 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {Links}
                         </ul>
                     </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                             src={logo}
 
                             animate={
-                                { x: [0, 50, 0] }
+                                { x: [0, 10, 0] }
                             }
                             transition={
                                 { duration: 8, repeat: Infinity }
@@ -83,14 +83,15 @@ const Navbar = () => {
 
                             className="max-w-lg w-12 h-12 mb-4 rounded-t-[45px]" />
                         <motion.h2
+                        
                             animate={
-                                { x: [0, 50, 0] }
+                                { x: [0, 10, 0] }
                             }
                             transition={
                                 { duration: 8, ease: easeOut, repeat: Infinity }
                             }
 
-                            className="mb-12 text-sm md:text-xl font-bold">Food for <motion.span
+                            className="mb-12 text-sm md:text-xl font-bold ">Food for <motion.span
                                 animate={
                                     { color: ['#33df33', '#33ff66', '#ff6133'], }
                                 }

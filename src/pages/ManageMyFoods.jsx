@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../components/Loading';
 
 const ManageMyFoods = () => {
 
@@ -12,16 +13,21 @@ const ManageMyFoods = () => {
     const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
 
         axios.get(`https://food-sharing-server-phi.vercel.app/availablefoods?currEmail=${user?.email}`, { withCredentials: true, })
             .then(res => {
                 setAvailFoods(res.data)
+                setLoading(false);
             })
 
     }, [])
 
+    if (loading) {
+        return <Loading></Loading>
+    }
 
 
     const handleDeleteFood = (id) => {
@@ -63,13 +69,12 @@ const ManageMyFoods = () => {
     return (
         <>
 
-            <h2 className='text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
+            <h2 className='mt-6 text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Foods
             </h2>
-            <div className="max-w-7xl mx-auto px-8 flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200 ">
+            <div className="max-w-7xl mx-auto px-8 flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200 dark:bg-gray-900">
                 <table className="table text-center">
-                    
-                    <thead className='font-extrabold hover:text-red-400'>
+                    <thead className='font-extrabold dark:text-white'>
                         <tr>
                             <th></th>
                             <th>Food Image</th>

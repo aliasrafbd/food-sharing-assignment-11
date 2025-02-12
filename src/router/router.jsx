@@ -25,13 +25,13 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async () => {
-                    const featuredFoodsRes = await fetch("https://food-sharing-server-phi.vercel.app/foods/featured");
-                    const featuredFoods = await featuredFoodsRes.json();
+                    // const featuredFoodsRes = await fetch("https://food-sharing-server-phi.vercel.app/foods/featured");
+                    // const featuredFoods = await featuredFoodsRes.json();
 
                     const ourBlogsRes = await fetch("https://food-sharing-server-phi.vercel.app/blogs");
                     const ourAllBlogs = await ourBlogsRes.json();
 
-                    return { featuredFoods, ourAllBlogs }
+                    return { ourAllBlogs }
                 },
             },
             {

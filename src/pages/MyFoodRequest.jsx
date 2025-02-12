@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext/AuthContext';
+import Loading from '../components/Loading';
 
 const MyFoodRequest = () => {
 
     const [requestedFoods, setRequestedFoods] = useState([]);
 
     const { user } = useContext(AuthContext);
+    const [loading, setLoading] = useState(true);
+
     console.log(user?.email);
 
     useEffect(() => {
@@ -14,19 +17,23 @@ const MyFoodRequest = () => {
         axios.get(`https://food-sharing-server-phi.vercel.app/requestedfoods?currEmail=${user?.email}`, {withCredentials: true,})
             .then(res => {
                 setRequestedFoods(res.data);
+                setLoading(false);
             })
 
     }, [])
 
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <>
-            <h2 className='text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
+            <h2 className='mt-6 text-center md:w-[100%] max-w-7xl mx-auto text-3xl mb-8 font-extrabold'>
                 My Food Request
             </h2>
-            <div className="max-w-7xl mx-auto flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200">
+            <div className="max-w-7xl mx-auto flex flex-col justify-center overflow-x-auto lg:overflow-x-hidden bg-red-200 dark:bg-gray-900">
                 <table className="table text-center">
-                    <thead className='font-extrabold'>
+                    <thead className='font-extrabold dark:text-white'>
                         <tr>
                             <th></th>
                             <th>Food Image</th>

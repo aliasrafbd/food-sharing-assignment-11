@@ -102,6 +102,7 @@ const AvailableFoods = () => {
                     </div>
                 </div>
 
+        <br />
                 <div className='flex justify-end lg:mr-4 mr-4'>
                     <button onClick={sortByDate} className='btn btn-success my-4'>Sort by Expired Date</button>
                 </div>
@@ -115,7 +116,7 @@ const AvailableFoods = () => {
                 <div className='mx-auto max-w-7xl '>
                     <button
                         onClick={toggleGrid}
-                        className={`absolute top-[150px] md:top-[210px] lg:top-[200px] right-0 lg:right-[104px] text-3xl mb-4 mr-4 md:mr-0 lg:mr-4 px-4 py-2 hidden md:block`}
+                        className={`absolute top-[150px] md:top-[280px] md:mr-4 lg:top-[280px] right-0 lg:right-[104px] text-3xl mb-4 mr-4 lg:mr-4 px-4 py-2 hidden md:block`}
                     >
                         {
                             isThreeColumn ? <TfiLayoutGrid3></TfiLayoutGrid3>
