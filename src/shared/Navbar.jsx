@@ -5,10 +5,14 @@ import { motion } from 'motion/react';
 import logo from "../../src/assets/share-food-logo.png"
 import { easeOut } from 'motion';
 import { FaUser } from "react-icons/fa";
+// import { Sun, Moon } from "lucide-react"; // Optional: Icons from lucide-react
+import { ThemeContext } from '../components/ThemeProvider';
 
 const Navbar = () => {
 
     const { loading, setLoading, user, setUser, logOut } = useContext(AuthContext);
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     const { pathname } = useLocation();
 
@@ -42,7 +46,7 @@ const Navbar = () => {
     </>)
 
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white p-4">
             <div className="navbar mx-auto max-w-9xl lg:max-w-7xl px-4 lg:px-8 md:px-12" >
                 <div className="navbar-start">
                     <div className="dropdown mr-6 md:mr-12 lg:mr-0">
@@ -87,7 +91,7 @@ const Navbar = () => {
                             }
 
                             className="mb-12 text-sm md:text-xl font-bold">Food for <motion.span
-                                animate= {
+                                animate={
                                     { color: ['#33df33', '#33ff66', '#ff6133'], }
                                 }
                                 transition={
@@ -118,6 +122,13 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            
+                <button
+                    onClick={toggleTheme}
+                    className="mt-4 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded"
+                >
+                    Toggle Theme
+                </button>
         </div>
     );
 };
