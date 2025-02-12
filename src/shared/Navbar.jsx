@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import logo from "../../src/assets/share-food-logo.png"
 import { easeOut } from 'motion';
 import { FaUser } from "react-icons/fa";
-// import { Sun, Moon } from "lucide-react"; // Optional: Icons from lucide-react
+import { Menu, Sun, Moon } from "lucide-react";
 import { ThemeContext } from '../components/ThemeProvider';
 
 const Navbar = () => {
@@ -108,6 +108,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div className='flex items-center justify-center'>
+                        <button onClick={toggleTheme} className="p-2">
+                            {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />} {/* Theme Toggle */}
+                        </button>
+                    </div>
                     <div className=" flex gap-4 justify-center items-center">
                         <div className="tooltip tooltip-bottom text-3xl" data-tip={user?.displayName}>
                             {
@@ -121,14 +126,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-                <button
-                    onClick={toggleTheme}
-                    className="mt-4 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded"
-                >
-                    Toggle Theme
-                </button>
         </div>
     );
 };

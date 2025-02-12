@@ -5,9 +5,9 @@ import logo from "../../src/assets/share-food-logo.png"
 
 const Footer = () => {
     return (
-        <div className='bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-4'>
+        <div className='bg-gray-100 mt-12 dark:bg-gray-900 text-black dark:text-white py-4'>
             <div className='max-w-7xl mx-auto'>
-                <footer className="ml-12 md:ml-0 footer p-2 mt-0 mb-0 md:mt-28 py-8 mx-auto">
+                <footer className="ml-12 md:ml-0 footer mx-auto">
                     <aside data-aos="zoom-in" className='ml-24 md:ml-0 lg:w-full mx-auto flex flex-col gap-3 justify-center items-center'>
                         <img className='h-36 w-36' src={logo} alt="" />
                     </aside>

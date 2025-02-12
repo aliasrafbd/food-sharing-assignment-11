@@ -11,7 +11,6 @@ const MyFoodRequest = () => {
 
     useEffect(() => {
         
-
         axios.get(`https://food-sharing-server-phi.vercel.app/requestedfoods?currEmail=${user?.email}`, {withCredentials: true,})
             .then(res => {
                 setRequestedFoods(res.data);
