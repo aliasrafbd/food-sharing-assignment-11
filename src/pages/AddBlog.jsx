@@ -49,12 +49,12 @@ const AddBlog = () => {
     return (
         <>
             <h2 className='font-extrabold text-3xl text-center max-w-7xl mx-auto'>Add Blog</h2>
-            <form onSubmit={handleAddBlog} className="card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+            <form onSubmit={handleAddBlog} className="text-black dark:text-white card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
 
                 {/* News Headline  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">News Headline</span>
+                        <span className="">News Headline</span>
                     </label>
                     <input type="text" name='newsHeadline' placeholder="News Headline" className="input input-bordered" required />
                 </div>
@@ -62,7 +62,7 @@ const AddBlog = () => {
                 {/* News Author  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">News Author</span>
+                        <span className="">News Author</span>
                     </label>
                     <input type="text" name='newsAuthor' placeholder="News Author" className="input input-bordered" required />
                 </div>
@@ -70,7 +70,7 @@ const AddBlog = () => {
                 {/* Published Date */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Published Date</span>
+                        <span className="">Published Date</span>
                     </label>
                     <DatePicker
                         className='w-full h-12 pl-1 input input-bordered'
@@ -84,7 +84,7 @@ const AddBlog = () => {
                 {/* News Image  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">News Image</span>
+                        <span className="">News Image</span>
                     </label>
                     <input type="url" name='newsImage' placeholder="News Image" className="input input-bordered" required />
                 </div>
@@ -92,7 +92,7 @@ const AddBlog = () => {
                 {/* News Content */}
                 <div className="form-control col-span-1 md:col-span-2">
                     <label className="label">
-                        <span className="label-text">News Content</span>
+                        <span className="">News Content</span>
                     </label>
                     <textarea rows="5" name='newsContent' className="textarea textarea-bordered" placeholder="News Content"></textarea>
                 </div>

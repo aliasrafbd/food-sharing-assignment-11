@@ -52,13 +52,13 @@ const AddFood = () => {
 
     return (
         <>
-            <h2 className='font-extrabold text-3xl text-center max-w-7xl mx-auto'>Add Food</h2>
-            <form onSubmit={handleAddFood} className="card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+            <h2 className='font-extrabold text-3xl  text-center max-w-7xl mx-auto'>Add Food</h2>
+            <form onSubmit={handleAddFood} className="text-black dark:text-white card-body grid grid-cols-1  md:grid-cols-2 gap-6 max-w-7xl mx-auto">
 
                 {/* Food Name  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Name</span>
+                        <span className="">Food Name</span>
                     </label>
                     <input type="text" name='foodName' placeholder="Food Name" className="input input-bordered" required />
                 </div>
@@ -66,7 +66,7 @@ const AddFood = () => {
                 {/* Food Image  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Image</span>
+                        <span className="">Food Image</span>
                     </label>
                     <input type="url" name='foodImage' placeholder="Food Image" className="input input-bordered" required />
                 </div>
@@ -74,7 +74,7 @@ const AddFood = () => {
                 {/* Food Quantity  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Food Quantity</span>
+                        <span className="">Food Quantity</span>
                     </label>
                     <input type="number" name='foodQuantity' placeholder="Food Quantity" className="input input-bordered" required />
                 </div>
@@ -82,7 +82,7 @@ const AddFood = () => {
                 {/* Pickup Location */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Pickup Location</span>
+                        <span className="">Pickup Location</span>
                     </label>
                     <input type="text" name='pickupLocation' placeholder="Pickup Location" className="input input-bordered" required />
                 </div>
@@ -90,7 +90,7 @@ const AddFood = () => {
                 {/* Expired Date */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Expired Date</span>
+                        <span className="">Expired Date</span>
                     </label>
                     <DatePicker
                         className='w-full h-12 pl-1 input input-bordered'
@@ -104,7 +104,7 @@ const AddFood = () => {
                 {/* Additional Notes */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Additional Notes</span>
+                        <span className="">Additional Notes</span>
                     </label>
                     <input type="text" name='additionalNotes' placeholder="Additional Notes" className="input input-bordered" required />
                 </div>
